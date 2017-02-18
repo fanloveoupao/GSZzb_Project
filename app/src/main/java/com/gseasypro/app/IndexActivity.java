@@ -1,6 +1,5 @@
 package com.gseasypro.app;
 
-import android.Manifest;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.support.annotation.Nullable;
@@ -11,21 +10,22 @@ import android.widget.CompoundButton;
 import android.widget.RadioButton;
 import android.widget.TextView;
 
-import com.gseasypro.app.base.BasePresenterActivity;
 import com.gseasypro.app.learn.IndexLearnFragment;
 import com.gseasypro.app.life.IndexLifeFragment;
 import com.gseasypro.app.mine.IndexMineFragment;
 import com.gseasypro.app.school.IndexSchoolFragment;
+import com.gseasypro.app.school.activity.BeautifulGsActivity;
 import com.gseasypro.app.school.activity.SearchNewsActivity;
 
+import app.gseasypro.com.utils.PresenterActivity;
 import app.gseasypro.com.utils.ui.widget.RadioButtonGroup;
 import app.gseasypro.com.utils.ui.widget.SimplePopupWindow;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class IndexActivity extends BasePresenterActivity<IndexPresenter, IndexPresenter.IndexView> {
-    private IndexPresenter presenter;
+public class IndexActivity extends PresenterActivity<IndexPresenter, IndexPresenter.IndexView>
+        implements IndexPresenter.IndexView {
 
     @BindView(R.id.title_name)
     TextView mTitleName;
@@ -138,16 +138,11 @@ public class IndexActivity extends BasePresenterActivity<IndexPresenter, IndexPr
                 .setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+                        launch(BeautifulGsActivity.class, false);
                         moreMenuPopupWindow.dismiss();
                     }
                 });
 
-    }
-
-    @Override
-    public IndexPresenter initPresenter() {
-        presenter = new IndexPresenter();
-        return presenter;
     }
 
     @Override

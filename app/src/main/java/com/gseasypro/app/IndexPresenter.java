@@ -9,6 +9,10 @@ import com.example.IView;
  */
 
 public class IndexPresenter extends BasePresenter<IndexPresenter.IndexView> {
+    public IndexPresenter(IndexView mView) {
+        super(mView);
+    }
+
     public interface IndexView extends IView {
 
     }

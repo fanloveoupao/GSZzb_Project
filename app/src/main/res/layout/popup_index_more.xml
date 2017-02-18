@@ -20,7 +20,7 @@
             android:drawableLeft="@mipmap/icon_friend"
             android:drawablePadding="10dp"
             android:gravity="center"
-            android:text="我的朋友"
+            android:text="最美广师"
             android:textColor="@color/white_ffffff"
             android:textSize="@dimen/font_32" />
     </RelativeLayout>

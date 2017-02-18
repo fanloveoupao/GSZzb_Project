@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_beautiful_gs"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.gseasypro.app.school.activity.BeautifulGsActivity">
+
+    <app.gseasypro.com.utils.ui.widget.TitleBar
+        android:id="@+id/title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"></app.gseasypro.com.utils.ui.widget.TitleBar>
+
+    <com.kennyc.view.MultiStateView
+        android:id="@+id/multiStateView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:msv_errorView="@layout/view_network_error"
+        app:msv_loadingView="@layout/loading_view"
+        app:msv_viewState="content">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_gs_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"></android.support.v7.widget.RecyclerView>
+    </com.kennyc.view.MultiStateView>
+</LinearLayout>

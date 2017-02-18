@@ -8,6 +8,10 @@ import com.example.IView;
  */
 
 public class IndexLifePresenter extends BasePresenter<IndexLifePresenter.IndexLifeIView> {
+    public IndexLifePresenter(IndexLifeIView mView) {
+        super(mView);
+    }
+
     public interface IndexLifeIView extends IView {
 
     }

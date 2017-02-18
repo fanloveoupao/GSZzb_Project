@@ -1,4 +1,4 @@
-package com.gseasypro.app.base;
+package app.gseasypro.com.utils;
 
 import android.content.Intent;
 import android.os.Bundle;

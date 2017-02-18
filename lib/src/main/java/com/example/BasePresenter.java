@@ -4,14 +4,51 @@ package com.example;
  * Created by fan-gk on 2017/2/3.
  */
 
-public abstract class BasePresenter<V extends IView> {
-    public V mView;
+public abstract class BasePresenter<E extends IView> implements IPresenter<E> {
+    private E viewer;
 
-    public void attach(V mView) {
-        this.mView = mView;
+    public BasePresenter(E viewer) {
+        this.viewer = viewer;
     }
 
-    public void dettach() {
-        mView = null;
+    @Override
+    public E getView() {
+        return viewer;
+    }
+
+    /**
+     * run in mian thread
+     */
+    public void onViewCreate() {
+    }
+
+    /**
+     * run in mian thread
+     */
+    public void onViewDestroy() {
+    }
+
+    /**
+     * run in mian thread
+     */
+    public void onViewResume() {
+    }
+
+    /**
+     * run in mian thread
+     */
+    public void onViewPause() {
+    }
+
+    /**
+     * run in mian thread
+     */
+    public void onViewStart() {
+    }
+
+    /**
+     * run in mian thread
+     */
+    public void onViewStop() {
     }
 }

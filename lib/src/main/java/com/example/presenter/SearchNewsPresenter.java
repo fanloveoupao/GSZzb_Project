@@ -8,6 +8,10 @@ import com.example.IView;
  */
 
 public class SearchNewsPresenter extends BasePresenter<SearchNewsPresenter.SearchNewsIView> {
+    public SearchNewsPresenter(SearchNewsIView mView) {
+        super(mView);
+    }
+
     public interface SearchNewsIView extends IView {
 
     }

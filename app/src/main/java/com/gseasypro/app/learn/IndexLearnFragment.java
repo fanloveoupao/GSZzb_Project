@@ -2,20 +2,20 @@ package com.gseasypro.app.learn;
 
 
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.presenter.IndexLearnPresenter;
 import com.gseasypro.app.R;
-import com.gseasypro.app.base.BaseFragment;
+
+import app.gseasypro.com.utils.PresenterFragment;
 
 /**
  * Created by fan-gk on 2017/2/9.
  */
-public class IndexLearnFragment extends BaseFragment<IndexLearnPresenter, IndexLearnPresenter.IndexLearnIView> {
-    private IndexLearnPresenter indexLearnPresenter;
+public class IndexLearnFragment extends PresenterFragment<IndexLearnPresenter, IndexLearnPresenter.IndexLearnIView>
+        implements IndexLearnPresenter.IndexLearnIView {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -24,9 +24,4 @@ public class IndexLearnFragment extends BaseFragment<IndexLearnPresenter, IndexL
         return inflater.inflate(R.layout.fragment_index_learn, container, false);
     }
 
-    @Override
-    public IndexLearnPresenter initPresenter() {
-        indexLearnPresenter=new IndexLearnPresenter();
-        return indexLearnPresenter;
-    }
 }
