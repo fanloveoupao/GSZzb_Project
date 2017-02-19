@@ -27,10 +27,13 @@ dependencies {
     compile 'com.android.support:appcompat-v7:' + SUPPORT_VERSION
     compile 'com.android.support:multidex:1.0.1'
     testCompile 'junit:junit:4.12'
+    compile project(path: ':lib')
     //外部库 end
     compile 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.2.2'
     compile 'com.github.Kennyc1012:MultiStateView:1.2.0'
     compile 'com.android.support:recyclerview-v7:'+ SUPPORT_VERSION
     compile 'com.squareup.picasso:picasso:2.5.2'
-    compile project(path: ':lib')
+    compile 'com.android.support:cardview-v7:' + SUPPORT_VERSION
+    compile 'com.android.support:design:' + SUPPORT_VERSION
+
 }

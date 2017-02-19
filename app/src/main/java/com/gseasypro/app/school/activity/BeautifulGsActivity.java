@@ -4,11 +4,13 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
 
 import com.example.presenter.BeautifulGsPresenter;
 import com.example.resources.bean.BeautifulGsItemBean;
 import com.gseasypro.app.R;
 import com.gseasypro.app.adapter.school.BeautifulGsAdapter;
+import com.gseasypro.app.adapter.school.FeedItemAnimator;
 import com.kennyc.view.MultiStateView;
 
 import java.util.ArrayList;
@@ -21,7 +23,7 @@ import butterknife.ButterKnife;
 
 public class BeautifulGsActivity extends PresenterActivity<BeautifulGsPresenter, BeautifulGsPresenter.BeautifulGsView>
         implements BeautifulGsPresenter.BeautifulGsView {
-
+    public static final String ACTION_LIKE_IMAGE_CLICKED = "action_like_image_button";
     @BindView(R.id.title_bar)
     TitleBar mTitleBar;
     @BindView(R.id.rv_gs_list)
@@ -38,14 +40,38 @@ public class BeautifulGsActivity extends PresenterActivity<BeautifulGsPresenter,
         mTitleBar.setCenterText("最美广师");
         mTitleBar.setBackClick(this);
         mMultiStateView.setViewState(MultiStateView.VIEW_STATE_CONTENT);
-        gsAdapter = new BeautifulGsAdapter(new ArrayList<BeautifulGsItemBean>());
+        gsAdapter = new BeautifulGsAdapter(this,new ArrayList<BeautifulGsItemBean>());
         mRvGsRecyclerList.setLayoutManager(new LinearLayoutManager(this));
         mRvGsRecyclerList.setAdapter(gsAdapter);
+        mRvGsRecyclerList.setItemAnimator(new FeedItemAnimator());
         initDatas();
+        initListener();
     }
 
     private void initDatas() {
         getPresenter().requestData();
+    }
+
+    private void initListener() {
+        gsAdapter.setListener(new BeautifulGsAdapter.OnFeedItemOnClickListener() {
+            @Override
+            public void onImageClick(View view, int position) {
+                gsAdapter.getData().get(position).likesCount++;
+                gsAdapter.getData().get(position).isLiked = true;
+                gsAdapter.notifyItemChanged(position, ACTION_LIKE_IMAGE_CLICKED);
+
+            }
+
+            @Override
+            public void onShareClick(View view, int position) {
+
+            }
+
+            @Override
+            public void onCommentsClick(View view, int position) {
+
+            }
+        });
     }
 
     @Override
