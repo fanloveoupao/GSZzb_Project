@@ -46,4 +46,34 @@
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">40dip</item>
     </style>
+
+    <style name="WhiteBigButton">
+        <item name="android:background">@drawable/selector_white_button_bg</item>
+        <item name="android:textColor">@color/black_333333</item>
+        <item name="android:textSize">@dimen/font_32</item>
+        <item name="android:paddingBottom">12dip</item>
+        <item name="android:paddingTop">12dip</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="OrangeBigButton">
+        <item name="android:background">@drawable/selector_orange_button_bg</item>
+        <item name="android:textColor">@color/selector_orange_button_text</item>
+        <item name="android:textSize">@dimen/font_32</item>
+        <item name="android:paddingBottom">12dip</item>
+        <item name="android:paddingTop">12dip</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="match_project_tv_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginLeft">48dp</item>
+        <item name="android:textColor">@color/black_666666</item>
+        <item name="android:textSize">@dimen/font_30</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:ellipsize">end</item>
+    </style>
 </resources>

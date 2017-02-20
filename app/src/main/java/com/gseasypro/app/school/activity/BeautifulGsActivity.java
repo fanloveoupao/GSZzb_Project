@@ -17,13 +17,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 import app.gseasypro.com.utils.PresenterActivity;
+import app.gseasypro.com.utils.widget.FeedContextMenu;
 import app.gseasypro.com.utils.ui.widget.TitleBar;
+import app.gseasypro.com.utils.widget.FeedContextMenuManager;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
+import static com.gseasypro.app.adapter.school.BeautifulGsAdapter.ACTION_LIKE_BUTTON_CLICKED;
+import static com.gseasypro.app.adapter.school.BeautifulGsAdapter.ACTION_LIKE_IMAGE_CLICKED;
+
 public class BeautifulGsActivity extends PresenterActivity<BeautifulGsPresenter, BeautifulGsPresenter.BeautifulGsView>
         implements BeautifulGsPresenter.BeautifulGsView {
-    public static final String ACTION_LIKE_IMAGE_CLICKED = "action_like_image_button";
     @BindView(R.id.title_bar)
     TitleBar mTitleBar;
     @BindView(R.id.rv_gs_list)
@@ -40,7 +44,7 @@ public class BeautifulGsActivity extends PresenterActivity<BeautifulGsPresenter,
         mTitleBar.setCenterText("最美广师");
         mTitleBar.setBackClick(this);
         mMultiStateView.setViewState(MultiStateView.VIEW_STATE_CONTENT);
-        gsAdapter = new BeautifulGsAdapter(this,new ArrayList<BeautifulGsItemBean>());
+        gsAdapter = new BeautifulGsAdapter(this, new ArrayList<BeautifulGsItemBean>());
         mRvGsRecyclerList.setLayoutManager(new LinearLayoutManager(this));
         mRvGsRecyclerList.setAdapter(gsAdapter);
         mRvGsRecyclerList.setItemAnimator(new FeedItemAnimator());
@@ -64,12 +68,38 @@ public class BeautifulGsActivity extends PresenterActivity<BeautifulGsPresenter,
 
             @Override
             public void onShareClick(View view, int position) {
+                FeedContextMenuManager.getInstance().toggleContextMenuFromView(view, position,
+                        new FeedContextMenu.OnFeedContextMenuItemClickListener() {
+                            @Override
+                            public void onSharePhotoClick(int feedItem) {
 
+                            }
+
+                            @Override
+                            public void onCancelClick(int feedItem) {
+                                FeedContextMenuManager.getInstance().hideContextMenu();
+                            }
+                        });
             }
 
             @Override
             public void onCommentsClick(View view, int position) {
+                launch(GsCommentsActivity.class, false);
+            }
 
+            @Override
+            public void onLikeClick(View view, int position) {
+                gsAdapter.getData().get(position).likesCount++;
+                gsAdapter.getData().get(position).isLiked = true;
+                gsAdapter.notifyItemChanged(position, ACTION_LIKE_BUTTON_CLICKED);
+            }
+        });
+
+        mRvGsRecyclerList.addOnScrollListener(new RecyclerView.OnScrollListener() {
+            @Override
+            public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
+                super.onScrolled(recyclerView, dx, dy);
+                FeedContextMenuManager.getInstance().onScrolled(recyclerView, dx, dy);
             }
         });
     }

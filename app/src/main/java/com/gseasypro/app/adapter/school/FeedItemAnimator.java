@@ -13,7 +13,6 @@ import android.view.animation.DecelerateInterpolator;
 import android.view.animation.OvershootInterpolator;
 
 import com.gseasypro.app.R;
-import com.gseasypro.app.adapter.school.BeautifulGsAdapter;
 
 import java.util.HashMap;
 import java.util.List;

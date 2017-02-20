@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.kennyc.view.MultiStateView
+        android:id="@+id/multiStateView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:msv_errorView="@layout/view_network_error"
+        app:msv_viewState="content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <com.gseasypro.app.widget.DoubleRecyclerView
+                android:id="@+id/area_view"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_above="@+id/ll_op"
+                android:background="@color/white_ffffff" />
+
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/type_view"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_above="@+id/ll_op"
+                android:background="@color/white_ffffff" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/stage_view"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_above="@+id/ll_op"
+                android:background="@color/white_ffffff" />
+
+
+            <TextView
+                android:id="@+id/bg"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_alignParentBottom="true"
+                android:background="@color/black_aa333333" />
+
+            <LinearLayout
+                android:id="@+id/ll_op"
+                android:layout_width="fill_parent"
+                android:layout_height="70dp"
+                android:layout_above="@id/bg"
+                android:background="#e3e3e3"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/v_btn_cancel"
+                    style="@style/WhiteBigButton"
+                    android:layout_width="0dp"
+                    android:layout_marginLeft="@dimen/margin_10"
+                    android:layout_marginRight="@dimen/margin_10"
+                    android:layout_marginTop="@dimen/margin_10"
+                    android:layout_weight="1.0"
+                    android:text="清空已选" />
+
+                <Button
+                    android:id="@+id/v_btn_submit"
+                    style="@style/OrangeBigButton"
+                    android:layout_width="0dp"
+                    android:layout_marginLeft="@dimen/margin_10"
+                    android:layout_marginRight="@dimen/margin_10"
+                    android:layout_marginTop="@dimen/margin_10"
+                    android:layout_weight="1.0"
+                    android:text="确定" />
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+    </com.kennyc.view.MultiStateView>
+
+</LinearLayout>

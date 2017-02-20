@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.androty6id.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/ll_parent"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -192,6 +193,14 @@
 
 
     </RelativeLayout>
+
+
+    <com.gseasypro.app.widget.CommonDataFilterView
+        android:id="@+id/commondata_filterview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/rl_top_filter"
+        android:visibility="gone" />
 
 
 </RelativeLayout>

@@ -11,18 +11,13 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextSwitcher;
 
-import com.chad.library.adapter.base.BaseQuickAdapter;
-import com.chad.library.adapter.base.BaseViewHolder;
 import com.example.resources.bean.BeautifulGsItemBean;
 import com.gseasypro.app.R;
-import com.gseasypro.app.picasso.ImageLoader;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 import app.gseasypro.com.utils.widget.LoadingFeedItemView;
-import app.gseasypro.com.utils.widget.SquaredFrameLayout;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
@@ -39,9 +34,11 @@ public class BeautifulGsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
         void onShareClick(View view, int position);
 
         void onCommentsClick(View view, int position);
+
+        void onLikeClick(View view, int position);
     }
 
-    public static class CellFeedViewHolder extends RecyclerView.ViewHolder {
+    protected static class CellFeedViewHolder extends RecyclerView.ViewHolder {
         @BindView(R.id.ivFeedCenter)
         ImageView ivFeedCenter;
         @BindView(R.id.ivFeedBottom)
@@ -65,17 +62,18 @@ public class BeautifulGsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
 
         BeautifulGsItemBean feedItem;
 
-        public CellFeedViewHolder(View view) {
+        private CellFeedViewHolder(View view) {
             super(view);
             ButterKnife.bind(this, view);
         }
 
-        public void bindView(BeautifulGsItemBean feedItem) {
+        private void bindView(BeautifulGsItemBean feedItem) {
             this.feedItem = feedItem;
             int adapterPosition = getAdapterPosition();
             ivFeedCenter.setOnClickListener(new OnClickListener(adapterPosition));
             btnMore.setOnClickListener(new OnClickListener(adapterPosition));
             btnComments.setOnClickListener(new OnClickListener(adapterPosition));
+            btnLike.setOnClickListener(new OnClickListener(adapterPosition));
             ivFeedCenter.setImageResource(adapterPosition % 2 == 0 ? R.mipmap.img_feed_center_1 : R.mipmap.img_feed_center_2);
             ivFeedBottom.setImageResource(adapterPosition % 2 == 0 ? R.mipmap.img_feed_bottom_1 : R.mipmap.img_feed_bottom_2);
             btnLike.setImageResource(feedItem.isLiked ? R.drawable.ic_heart_red : R.drawable.ic_heart_outline_grey);
@@ -89,19 +87,19 @@ public class BeautifulGsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
         }
     }
 
-    class LoadingCellFeedViewHolder extends RecyclerView.ViewHolder {
+    private class LoadingCellFeedViewHolder extends RecyclerView.ViewHolder {
         LoadingFeedItemView loadingFeedItemView;
 
-        protected LoadingCellFeedViewHolder(View view) {
+        private LoadingCellFeedViewHolder(View view) {
             super(view);
             loadingFeedItemView = (LoadingFeedItemView) view;
         }
     }
 
-    static class OnClickListener implements View.OnClickListener {
+    private static class OnClickListener implements View.OnClickListener {
         private int position;
 
-        public OnClickListener(int position) {
+        private OnClickListener(int position) {
             this.position = position;
         }
 
@@ -119,15 +117,23 @@ public class BeautifulGsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
                 case R.id.btnComments:
                     listener.onCommentsClick(view, position);
                     break;
+                case R.id.btnLike:
+                    listener.onLikeClick(view, position);
+                    break;
             }
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            return super.equals(obj);
         }
     }
 
     public static final String ACTION_LIKE_BUTTON_CLICKED = "action_like_button_button";
     public static final String ACTION_LIKE_IMAGE_CLICKED = "action_like_image_button";
 
-    public static final int VIEW_TYPE_DEFAULT = 1;
-    public static final int VIEW_TYPE_LOADER = 2;
+    static final int VIEW_TYPE_DEFAULT = 1;
+    private static final int VIEW_TYPE_LOADER = 2;
     private boolean showLoadingView = false;
     private static OnFeedItemOnClickListener listener;
     private Context context;

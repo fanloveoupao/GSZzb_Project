@@ -17,7 +17,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".school.activity.SearchNewsActivity" />
-        <activity android:name=".school.activity.BeautifulGsActivity"></activity>
+        <activity android:name=".school.activity.BeautifulGsActivity" />
+        <activity android:name=".school.activity.GsCommentsActivity"></activity>
     </application>
 
 </manifest>
