@@ -8,6 +8,7 @@ import com.example.resources.bean.AdvertisementsBean;
 import com.example.resources.bean.BaseClassBean;
 import com.example.resources.bean.ProjectBean;
 import com.example.resources.bean.UserBean;
+import com.example.utils.CollectionUtil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -33,6 +34,8 @@ public class IndexSchoolPresenter extends BasePresenter<IndexSchoolPresenter.Ind
 
         void onRefreshDataSuccess(boolean isShowAdvertisement);
 
+        void onProgressBarGone();
+
         void onSetViewEmpty();
 
         void onSetViewContent();
@@ -49,38 +52,60 @@ public class IndexSchoolPresenter extends BasePresenter<IndexSchoolPresenter.Ind
     }
 
     private int start = 0;
-    private int limit = 30;
+    private int limit = 20;
 
 
     public void refresh(final boolean reset, boolean runBackground) {
+        final List<String> areaNos = getView().getAreaNos();
+        final List<String> typeNos = getView().getTypeNos();
+        final List<String> stageNos = getView().getStageNos();
         List<ProjectBean> projectBeanList = new ArrayList<>();
-        ProjectBean projectBean = new ProjectBean();
-        UserBean userBean = new UserBean();
-        userBean.name = "广技师";
-        userBean.tag = "通知";
-        projectBean.user = userBean;
-        projectBean.name = "关于校本部后门车辆禁止通行的通知";
-        projectBean.content = "由于我校校本部后门现正进行道路施工，导致道路无法适应车辆通行，现通知如下：即日起，校本部后门禁止车辆通行，所有进出车辆从前门通行，何时再次开通将另行通知。";
-        List<String> keyWords = new ArrayList<>();
-        keyWords.add("道路施工");
-        keyWords.add("无法适应车辆通行");
-        projectBean.keywords = keyWords;
-        projectBean.view_count = 210;
-        projectBean.chat_count = 5;
-        projectBeanList.add(projectBean);
+        for (int i = 0; i < 20; i++) {
+            ProjectBean projectBean = new ProjectBean();
+            UserBean userBean = new UserBean();
+            userBean.image = "https://imgsa.baidu.com/baike/c0%3Dbaike80%2C5%2C5%2C80%2C26/sign=68da02df3901213fdb3e468e358e5db4/9f510fb30f2442a73cf9cba3d143ad4bd01302c4.jpg";
+            projectBean.user = userBean;
+            if (i % 2 == 0) {
+                userBean.name = "广技师";
+                userBean.tag = "通知";
+                projectBean.name = "关于调整各校区交通车安排的紧急通知";
+                projectBean.content = "由于我校校本部后门现正进行道路施工，导致道路无法适应车辆通行，现通知如下：即日起，校本部后门禁止车辆通行，所有进出车辆从前门通行，何时再次开通将另行通知。";
+                List<String> keyWords = new ArrayList<>();
+                keyWords.add("校本部");
+                keyWords.add("道路施工");
+                keyWords.add("无法适应车辆通行");
+                projectBean.keywords = keyWords;
+            } else {
+                userBean.name = "传播学院";
+                userBean.tag = "通知";
+                userBean.image = "http://setc.gpnu.edu.cn/img/logo.png";
+                projectBean.name = "关于调整各校区交通车安排的紧急通知";
+                projectBean.content = "从2017年2月17日起，除保留各校区往返白云校区的交通车（详见附件）外，取消其它市内各校区的往返交通车。请各单位务必通知到本单位的全体员工，确保开学各项工作稳定有序运行。";
+                List<String> keyWords = new ArrayList<>();
+                keyWords.add("2017年2月17日");
+                keyWords.add("白云校区");
+                projectBean.keywords = keyWords;
+            }
+            projectBean.view_count = 210;
+            projectBean.chat_count = 5;
+            projectBeanList.add(projectBean);
+        }
+        boolean isShowAdvertisement = CollectionUtil.isNullOrEmpty(areaNos) && CollectionUtil.isNullOrEmpty(typeNos) &&
+                CollectionUtil.isNullOrEmpty(stageNos);
+        getView().onProgressBarGone();
         getView().onLoadMoreSuccess(projectBeanList);
-        getView().onRefreshDataSuccess(true);
+        getView().onRefreshDataSuccess(isShowAdvertisement);
     }
 
     //头部广告
     public void getHeaderListBean() {
         List<AdvertisementsBean> headerListBean = new ArrayList<>();
         AdvertisementsBean bean = new AdvertisementsBean();
-        bean.url = "http://ossweb-img.qq.com/images/lol/web201310/skin/big122004.jpg";
+        bean.image = "http://www.gdin.edu.cn/images/1219.jpg";
         AdvertisementsBean bean1 = new AdvertisementsBean();
-        bean1.url = "http://ossweb-img.qq.com/images/lol/web201310/skin/big86011.jpg";
+        bean1.image = "http://file.tgimg.cn/Image/Show?fid=42496275784-c699377f-985a-477b-a6ea-023359ce4330.jpg";
         AdvertisementsBean bean2 = new AdvertisementsBean();
-        bean2.url = "http://ossweb-img.qq.com/images/lol/web201310/skin/big75010.jpg";
+        bean2.image = "http://file.tgimg.cn/Image/Show?fid=75236279058-dc8ea0ff-3fc7-4c7a-a53f-94e57e604b21.jpg";
         headerListBean.add(bean);
         headerListBean.add(bean1);
         headerListBean.add(bean2);
@@ -89,6 +114,12 @@ public class IndexSchoolPresenter extends BasePresenter<IndexSchoolPresenter.Ind
     }
 
     public void loadMoreData() {
+        try {
+            Thread.sleep(2000);
+            refresh(false, false);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
 
     }
 

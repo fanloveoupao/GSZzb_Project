@@ -10,4 +10,5 @@ public class UserBean {
     public String name;
     public String sex;
     public String tag;
+    public String image;
 }

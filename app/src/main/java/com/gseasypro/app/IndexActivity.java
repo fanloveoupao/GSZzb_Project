@@ -1,5 +1,6 @@
 package com.gseasypro.app;
 
+import android.Manifest;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.support.annotation.Nullable;
@@ -10,6 +11,7 @@ import android.widget.CompoundButton;
 import android.widget.RadioButton;
 import android.widget.TextView;
 
+import com.gseasypro.app.activity.QRCodeScanActivity;
 import com.gseasypro.app.learn.IndexLearnFragment;
 import com.gseasypro.app.life.IndexLifeFragment;
 import com.gseasypro.app.mine.IndexMineFragment;
@@ -132,6 +134,11 @@ public class IndexActivity extends PresenterActivity<IndexPresenter, IndexPresen
                     @Override
                     public void onClick(View v) {
                         moreMenuPopupWindow.dismiss();
+                        if (getPermissionHelper().isGranted(Manifest.permission.CAMERA)) {
+                            launch(QRCodeScanActivity.class, false);
+                        } else {
+                            getPermissionHelper().request(true, Manifest.permission.CAMERA);
+                        }
                     }
                 });
         moreMenuPopupWindow.getContentView().findViewById(R.id.rl_my_friend)

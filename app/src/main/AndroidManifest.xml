@@ -2,8 +2,20 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.gseasypro.app">
 
+    <!-- 进行网络访问和网络状态监控相关的权限声明 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <!-- 允许对sd卡进行读写操作 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <!-- 网络库使用，当网络操作时需要确保事务完成不被杀掉 -->
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <!-- 允许对sd卡进行读写操作 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
     <application
-        android:name=".base.ZzbApplication"
+        android:name=".ZzbApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -18,7 +30,13 @@
         </activity>
         <activity android:name=".school.activity.SearchNewsActivity" />
         <activity android:name=".school.activity.BeautifulGsActivity" />
-        <activity android:name=".school.activity.GsCommentsActivity"></activity>
+        <activity android:name=".school.activity.GsCommentsActivity" />
+        <activity
+            android:name=".activity.QRCodeScanActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:theme="@style/ActivityStyle"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity android:name=".activity.H5Activity"></activity>
     </application>
 
 </manifest>

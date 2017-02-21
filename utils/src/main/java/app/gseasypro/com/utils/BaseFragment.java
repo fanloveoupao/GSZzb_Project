@@ -6,12 +6,19 @@ import com.example.IView;
 import com.example.exceptions.NetworkException;
 
 import app.gseasypro.com.utils.ui.KeyBoardUtils;
+import app.gseasypro.com.utils.utils.PermissionHelper;
 
 /**
  * Created by fan-gk on 2017/2/18.
  */
 
 public class BaseFragment extends Fragment implements IView {
+
+    private final PermissionHelper permissionHelper = PermissionHelper.createFragmentHelper(this);
+
+    protected PermissionHelper getPermissionHelper() {
+        return permissionHelper;
+    }
 
     @Override
     public void onDestroy() {

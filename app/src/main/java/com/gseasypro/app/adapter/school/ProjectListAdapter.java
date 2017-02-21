@@ -1,5 +1,6 @@
 package com.gseasypro.app.adapter.school;
 
+import android.net.Uri;
 import android.text.Html;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -16,6 +17,7 @@ import com.gseasypro.app.picasso.ImageLoader;
 import java.util.List;
 
 import app.gseasypro.com.utils.widget.LoadMoreAdapter;
+import retrofit2.http.Url;
 
 /**
  * Created by fan-gk on 2017/2/20.
@@ -36,7 +38,7 @@ public class ProjectListAdapter extends LoadMoreAdapter<ProjectBean> {
             baseViewHolder.setText(R.id.tv_action, userBean.tag + "");
         }
         ImageView ivHead = baseViewHolder.getView(R.id.iv_head);
-        ImageLoader.loadIcon("", ivHead, true, true);
+        ImageLoader.loadIcon(Uri.parse(userBean.image), ivHead, true, true);
 
         String content = projectBean.content;
         if (!StringUtil.isNullOrEmpty(content)) {

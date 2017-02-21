@@ -10,12 +10,19 @@ import com.example.IView;
 import app.gseasypro.com.utils.executor.ThreadExecutor;
 import app.gseasypro.com.utils.ui.KeyBoardUtils;
 import app.gseasypro.com.utils.ui.widget.IIntentInterceptor;
+import app.gseasypro.com.utils.utils.PermissionHelper;
 
 /**
  * Created by fan-gk on 2017/2/9.
  */
 
 public abstract class BaseActivity extends AppCompatActivity implements IView {
+
+    private PermissionHelper permissionHelper = PermissionHelper.createActivityHelper(this);
+
+    public PermissionHelper getPermissionHelper() {
+        return permissionHelper;
+    }
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {

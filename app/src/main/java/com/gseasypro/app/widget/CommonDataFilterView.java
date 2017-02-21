@@ -307,6 +307,11 @@ public class CommonDataFilterView extends RelativeLayout implements View.OnClick
                 setVisibility(GONE);
                 mFilterListener.submit(getChooseAreas(), getChooseTypes().get("typeNos"), getChooseTStages().get("stageNos"), getAreaStr(),
                         StringUtil.join(",", getChooseTypes().get("typeName")), StringUtil.join(",", getChooseTStages().get("stageName")));
+                boolean isChoose = CollectionUtil.isNullOrEmpty(getChooseAreas()) && CollectionUtil.isNullOrEmpty(getChooseTypes().get("typeNos")) &&
+                        CollectionUtil.isNullOrEmpty(getChooseTStages().get("stageNos"));
+                if (isChoose)
+                    mFilterListener.viewGone();
+
                 break;
         }
     }

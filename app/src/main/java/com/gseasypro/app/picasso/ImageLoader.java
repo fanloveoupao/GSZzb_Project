@@ -96,13 +96,13 @@ public class ImageLoader {
         }
     }
 
-    public static void loadIcon(@NonNull Bitmap image,@NonNull ImageView imageView,boolean isRound){
-        if(isRound){
+    public static void loadIcon(@NonNull Bitmap image, @NonNull ImageView imageView, boolean isRound) {
+        if (isRound) {
             RoundedBitmapDrawable roundIcon = RoundedBitmapDrawableFactory.create(imageView.getContext().getResources()
                     , image);
             roundIcon.setCircular(true);
             imageView.setImageDrawable(roundIcon);
-        }else{
+        } else {
             imageView.setImageBitmap(image);
         }
     }
@@ -129,7 +129,7 @@ public class ImageLoader {
             creator.placeholder(defaultRoundIcon)
                     .error(defaultRoundIcon)
                     .transform(circleTransformation);
-        }else{
+        } else {
             creator.placeholder(R.drawable.default_portrait)
                     .error(R.drawable.default_portrait);
         }

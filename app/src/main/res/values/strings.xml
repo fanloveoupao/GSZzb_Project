@@ -19,4 +19,7 @@
     <string name="mine_version_update">版本更新</string>
     <string name="password">密码</string>
     <string name="notification_tips">你现在无法收到新消息通知。请到系统“设置”-“应用”-“业务圈”-“通知”中开启</string>
+
+    <string name="scan_two_code_tips">将二维码图案放在取景框内，即可自动扫描</string>
+
 </resources>

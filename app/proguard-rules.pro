@@ -15,3 +15,11 @@
 #-keepclassmembers class fqcn.of.javascript.interface.for.webview {
 #   public *;
 #}
+
+-dontwarn freemarker.**
+
+-keep class freemarker.ext.**
+-keep class freemarker.template.**
+-keepclasseswithmembers class freemarker.** {
+   *;
+}

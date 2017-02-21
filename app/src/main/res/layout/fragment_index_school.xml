@@ -143,10 +143,10 @@
 
     </com.kennyc.view.MultiStateView>
 
-    <ProgressBar
+    <app.gseasypro.com.utils.ui.widget.DotProgressBar
         android:id="@+id/progressbar"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="80dp"
+        android:layout_height="15dp"
         android:layout_centerInParent="true"
         android:visibility="invisible" />
 

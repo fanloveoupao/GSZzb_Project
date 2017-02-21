@@ -26,7 +26,7 @@ public class LocalImageHolderView implements Holder<AdvertisementsBean> {
 
     @Override
     public void UpdateUI(Context context, int position, AdvertisementsBean data) {
-        if (data.url != null)
-            ImageLoader.loadImage(Uri.parse(data.url), imageView);
+        if (data.image != null)
+            ImageLoader.loadImage(Uri.parse(data.image), imageView);
     }
 }

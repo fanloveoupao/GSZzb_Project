@@ -50,6 +50,7 @@ public class BeautifulGsActivity extends PresenterActivity<BeautifulGsPresenter,
         mRvGsRecyclerList.setItemAnimator(new FeedItemAnimator());
         initDatas();
         initListener();
+
     }
 
     private void initDatas() {

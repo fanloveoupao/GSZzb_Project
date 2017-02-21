@@ -2,7 +2,7 @@ package com.gseasypro.app.school;
 
 
 import android.os.Bundle;
-import android.support.annotation.Nullable;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -11,7 +11,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -34,6 +33,7 @@ import java.util.List;
 import app.gseasypro.com.utils.PresenterFragment;
 import app.gseasypro.com.utils.ToastUtils;
 import app.gseasypro.com.utils.ui.widget.AdvertisementBanner;
+import app.gseasypro.com.utils.ui.widget.DotProgressBar;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -94,7 +94,7 @@ public class IndexSchoolFragment extends PresenterFragment<IndexSchoolPresenter,
     @BindView(R.id.swipeLayout)
     SwipeRefreshLayout mSwipeLayout;
     @BindView(R.id.progressbar)
-    ProgressBar mProgressBar;
+    DotProgressBar mProgressBar;
     @BindView(R.id.commondata_filterview)
     CommonDataFilterView mCommondataFilterView;
     @BindView(R.id.tv_all_project_count)
@@ -108,17 +108,13 @@ public class IndexSchoolFragment extends PresenterFragment<IndexSchoolPresenter,
     private final int TAG_AREA = 0x111;
     private final int TAG_TYPE = 0x112;
     private final int TAG_STAGE = 0x113;
-    private String keyword = StringUtil.EMPTY;
-
     private List<String> mTypeNos = new ArrayList<>();
     private List<String> mStageNos = new ArrayList<>();
     private final List<String> mAreaNos = new ArrayList<>();
-    private List<ProjectBean> mProjectBeanList = new ArrayList<ProjectBean>();
+    private List<ProjectBean> mProjectBeanList = new ArrayList<>();
 
     private ProjectListAdapter mProjectListAdapter;
     private AdvertisementBanner mBanner;
-    private LinearLayout mLlMatchCount;
-    private View mHeader;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -150,9 +146,8 @@ public class IndexSchoolFragment extends PresenterFragment<IndexSchoolPresenter,
     }
 
     private void initHeader() {
-        mHeader = LayoutInflater.from(getActivity()).inflate(R.layout.circle_page_header, null, false);
+        View mHeader = LayoutInflater.from(getActivity()).inflate(R.layout.circle_page_header, null, false);
         mBanner = (AdvertisementBanner) mHeader.findViewById(R.id.banner);
-        mLlMatchCount = (LinearLayout) mHeader.findViewById(R.id.ll_match_project);
         mProjectListAdapter.addHeaderView(mHeader);
     }
 
@@ -182,9 +177,9 @@ public class IndexSchoolFragment extends PresenterFragment<IndexSchoolPresenter,
                 mTypeNos.addAll(typeList);
                 mStageNos.clear();
                 mStageNos.addAll(stageList);
-                mProvinceText.setText(StringUtil.isNullOrEmpty(areaStr) ? "地区" : areaStr);
+                mProvinceText.setText(StringUtil.isNullOrEmpty(areaStr) ? "专业" : areaStr);
                 mAlltypeText.setText(StringUtil.isNullOrEmpty(typeStr) ? "类型" : typeStr);
-                mAllstageText.setText(StringUtil.isNullOrEmpty(stageStr) ? "阶段" : stageStr);
+                mAllstageText.setText(StringUtil.isNullOrEmpty(stageStr) ? "校区" : stageStr);
                 refreshData(true);
             }
 
@@ -268,20 +263,20 @@ public class IndexSchoolFragment extends PresenterFragment<IndexSchoolPresenter,
                     mTitleLineLayout.setVisibility(View.VISIBLE);
                     mProvinceLine.setVisibility(View.VISIBLE);
                     mImageProvince.setBackgroundResource(R.mipmap.sprinner_orange_up);
-                    mProvinceText.setTextColor(getResources().getColor(R.color.orange_ff5500));
+                    mProvinceText.setTextColor(ContextCompat.getColor(getBaseActivity(), R.color.orange_ff5500));
 
                     mAlltypeLine.setVisibility(View.INVISIBLE);
                     mImageType.setBackgroundResource(R.mipmap.sprinner_gray_down);
-                    mAlltypeText.setTextColor(getResources().getColor(R.color.black_555555));
+                    mAlltypeText.setTextColor(ContextCompat.getColor(getBaseActivity(), R.color.black_555555));
 
                     mAllstageLine.setVisibility(View.INVISIBLE);
                     mImageStage.setBackgroundResource(R.mipmap.sprinner_gray_down);
-                    mAllstageText.setTextColor(getResources().getColor(R.color.black_555555));
+                    mAllstageText.setTextColor(ContextCompat.getColor(getBaseActivity(), R.color.black_555555));
                 } else {
                     mTitleLineLayout.setVisibility(GONE);
                     mProvinceLine.setVisibility(View.INVISIBLE);
                     mImageProvince.setBackgroundResource(R.mipmap.sprinner_gray_down);
-                    mProvinceText.setTextColor(getResources().getColor(R.color.black_555555));
+                    mProvinceText.setTextColor(ContextCompat.getColor(getBaseActivity(), R.color.black_555555));
                 }
                 break;
             case TAG_TYPE:
@@ -289,20 +284,20 @@ public class IndexSchoolFragment extends PresenterFragment<IndexSchoolPresenter,
                     mTitleLineLayout.setVisibility(View.VISIBLE);
                     mAlltypeLine.setVisibility(View.VISIBLE);
                     mImageType.setBackgroundResource(R.mipmap.sprinner_orange_up);
-                    mAlltypeText.setTextColor(getResources().getColor(R.color.orange_ff5500));
+                    mAlltypeText.setTextColor(ContextCompat.getColor(getBaseActivity(), R.color.orange_ff5500));
 
                     mProvinceLine.setVisibility(View.INVISIBLE);
                     mImageProvince.setBackgroundResource(R.mipmap.sprinner_gray_down);
-                    mProvinceText.setTextColor(getResources().getColor(R.color.black_555555));
+                    mProvinceText.setTextColor(ContextCompat.getColor(getBaseActivity(), R.color.black_555555));
 
                     mAllstageLine.setVisibility(View.INVISIBLE);
                     mImageStage.setBackgroundResource(R.mipmap.sprinner_gray_down);
-                    mAllstageText.setTextColor(getResources().getColor(R.color.black_555555));
+                    mAllstageText.setTextColor(ContextCompat.getColor(getBaseActivity(), R.color.black_555555));
                 } else {
                     mTitleLineLayout.setVisibility(GONE);
                     mAlltypeLine.setVisibility(View.INVISIBLE);
                     mImageType.setBackgroundResource(R.mipmap.sprinner_gray_down);
-                    mAlltypeText.setTextColor(getResources().getColor(R.color.black_555555));
+                    mAlltypeText.setTextColor(ContextCompat.getColor(getBaseActivity(), R.color.black_555555));
                 }
                 break;
             case TAG_STAGE:
@@ -310,20 +305,20 @@ public class IndexSchoolFragment extends PresenterFragment<IndexSchoolPresenter,
                     mTitleLineLayout.setVisibility(View.VISIBLE);
                     mAllstageLine.setVisibility(View.VISIBLE);
                     mImageStage.setBackgroundResource(R.mipmap.sprinner_orange_up);
-                    mAllstageText.setTextColor(getResources().getColor(R.color.orange_ff5500));
+                    mAllstageText.setTextColor(ContextCompat.getColor(getBaseActivity(), R.color.orange_ff5500));
 
                     mProvinceLine.setVisibility(View.INVISIBLE);
                     mImageProvince.setBackgroundResource(R.mipmap.sprinner_gray_down);
-                    mProvinceText.setTextColor(getResources().getColor(R.color.black_555555));
+                    mProvinceText.setTextColor(ContextCompat.getColor(getBaseActivity(), R.color.black_555555));
 
                     mAlltypeLine.setVisibility(View.INVISIBLE);
                     mImageType.setBackgroundResource(R.mipmap.sprinner_gray_down);
-                    mAlltypeText.setTextColor(getResources().getColor(R.color.black_555555));
+                    mAlltypeText.setTextColor(ContextCompat.getColor(getBaseActivity(), R.color.black_555555));
                 } else {
                     mTitleLineLayout.setVisibility(GONE);
                     mAllstageLine.setVisibility(View.INVISIBLE);
                     mImageStage.setBackgroundResource(R.mipmap.sprinner_gray_down);
-                    mAllstageText.setTextColor(getResources().getColor(R.color.black_555555));
+                    mAllstageText.setTextColor(ContextCompat.getColor(getBaseActivity(), R.color.black_555555));
                 }
                 break;
         }
@@ -364,6 +359,12 @@ public class IndexSchoolFragment extends PresenterFragment<IndexSchoolPresenter,
         mSwipeLayout.setRefreshing(false);
         mProjectListAdapter.notifyDataSetChanged();
         mMultiStateView.setViewState(MultiStateView.VIEW_STATE_CONTENT);
+
+    }
+
+    @Override
+    public void onProgressBarGone() {
+        mProgressBar.setVisibility(GONE);
 
     }
 
