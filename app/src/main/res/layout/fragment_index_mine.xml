@@ -74,7 +74,7 @@
                             android:duplicateParentState="true"
                             android:ellipsize="end"
                             android:singleLine="true"
-                            android:text="名字/职位"
+                            android:text="名字/专业"
                             android:textColor="@color/black_333333"
                             android:textSize="@dimen/font_28" />
 

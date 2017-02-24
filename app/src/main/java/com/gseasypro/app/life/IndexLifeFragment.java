@@ -71,37 +71,37 @@ public class IndexLifeFragment extends PresenterFragment<IndexLifePresenter, Ind
         ItemLifeBean lifeBean = new ItemLifeBean();
         lifeBean.imageId = R.mipmap.life_one;
         lifeBean.tag = "one";
-        lifeBean.itemTag = "INBOX";
+        lifeBean.itemTag = "一卡通";
         lifeBean.tagColors = ContextCompat.getColor(getBaseActivity(), R.color.blue_2277dd);
         //
         ItemLifeBean lifeBean1 = new ItemLifeBean();
         lifeBean1.imageId = R.mipmap.life_two;
         lifeBean1.tag = "two";
-        lifeBean1.itemTag = "FLAGGED";
+        lifeBean1.itemTag = "包裹跟踪";
         lifeBean1.tagColors = ContextCompat.getColor(getBaseActivity(), R.color.orange_dd9900);
         //
         ItemLifeBean lifeBean2 = new ItemLifeBean();
         lifeBean2.imageId = R.mipmap.life_three;
         lifeBean2.tag = "three";
-        lifeBean2.itemTag = "TODAY";
+        lifeBean2.itemTag = "校园广播";
         lifeBean2.tagColors = ContextCompat.getColor(getBaseActivity(), R.color.green_00aa33);
         //
         ItemLifeBean lifeBean3 = new ItemLifeBean();
         lifeBean3.imageId = R.mipmap.life_four;
         lifeBean3.tag = "four";
-        lifeBean3.itemTag = "7 DAYS";
+        lifeBean3.itemTag = "保修管理";
         lifeBean3.tagColors = ContextCompat.getColor(getBaseActivity(), R.color.black_000000);
         //
         ItemLifeBean lifeBean4 = new ItemLifeBean();
         lifeBean4.imageId = R.mipmap.life_five;
         lifeBean4.tag = "five";
-        lifeBean4.itemTag = "SCHEDOLD";
+        lifeBean4.itemTag = "校车查询";
         lifeBean4.tagColors = ContextCompat.getColor(getBaseActivity(), R.color.yellow_b67c00);
         //
         ItemLifeBean lifeBean5 = new ItemLifeBean();
         lifeBean5.imageId = R.mipmap.life_six;
         lifeBean5.tag = "six";
-        lifeBean5.itemTag = "OVERDUE";
+        lifeBean5.itemTag = "活动优惠";
         lifeBean5.tagColors = ContextCompat.getColor(getBaseActivity(), R.color.red_990000);
 
         beanList.add(lifeBean);

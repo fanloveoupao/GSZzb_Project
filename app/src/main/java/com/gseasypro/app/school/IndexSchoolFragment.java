@@ -133,7 +133,6 @@ public class IndexSchoolFragment extends PresenterFragment<IndexSchoolPresenter,
         LinearLayoutManager manager = new LinearLayoutManager(getActivity());
         mRcProjectList.setLayoutManager(manager);
         mProjectListAdapter = new ProjectListAdapter(mProjectBeanList);
-        mProjectListAdapter.openLoadAnimation();
         mProjectListAdapter.openLoadMore(getPresenter().getLimit());
         mProjectListAdapter.setOnLoadMoreListener(this);
         mProjectListAdapter.openLoadAnimation(BaseQuickAdapter.SLIDEIN_BOTTOM);

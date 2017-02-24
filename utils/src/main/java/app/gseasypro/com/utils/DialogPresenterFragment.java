@@ -17,11 +17,11 @@ public abstract class DialogPresenterFragment<T extends BasePresenter<E>, E exte
 
     private T presenter;
 
-    protected T getPresenter(){
+    protected T getPresenter() {
         return presenter;
     }
 
-    protected T createPresenter(){
+    protected T createPresenter() {
         presenter = PresenterUtil.createPresenter(this);
         return presenter;
     }
@@ -55,7 +55,6 @@ public abstract class DialogPresenterFragment<T extends BasePresenter<E>, E exte
     }
 
 
-
     @Override
     @CallSuper
     public void onPause() {
@@ -79,9 +78,28 @@ public abstract class DialogPresenterFragment<T extends BasePresenter<E>, E exte
     //region IView
 
 
-
     protected BaseActivity getBaseActivity() {
         return (BaseActivity) getActivity();
+    }
+
+    @Override
+    public void onException(Exception e) {
+
+    }
+
+    @Override
+    public void onException(Exception e, boolean finish) {
+
+    }
+
+    @Override
+    public void onException(NetworkException e) {
+
+    }
+
+    @Override
+    public void onWarn(String message) {
+
     }
 
 

@@ -114,12 +114,7 @@ public class IndexSchoolPresenter extends BasePresenter<IndexSchoolPresenter.Ind
     }
 
     public void loadMoreData() {
-        try {
-            Thread.sleep(2000);
-            refresh(false, false);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+        refresh(false, false);
 
     }
 
@@ -131,7 +126,7 @@ public class IndexSchoolPresenter extends BasePresenter<IndexSchoolPresenter.Ind
     public List<BaseClassBean> getAreaData() throws NetworkException {
         List<BaseClassBean> areas = new ArrayList<>();
         BaseClassBean bean = new BaseClassBean();
-        bean.name = "教育技术与传播学院";
+        bean.name = "传播学院";
         List<BaseClassBean> beanList = new ArrayList<>();
         BaseClassBean bean0 = new BaseClassBean();
         bean0.name = "数字媒体";

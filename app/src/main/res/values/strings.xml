@@ -10,9 +10,9 @@
     <string name="mine_prompt">完善资料，获取适合您的项目和人脉</string>
     <string name="mine_name">刘远西</string>
     <string name="mine_position">（职位为空）</string>
-    <string name="mine_friends_num">好友</string>
-    <string name="mine_project_num">项目</string>
-    <string name="mine_vistor">项目访客</string>
+    <string name="mine_friends_num">通知</string>
+    <string name="mine_project_num">讲座</string>
+    <string name="mine_vistor">师兄师姐</string>
     <string name="mine_collection">我的收藏</string>
     <string name="mine_feedback">意见反馈</string>
     <string name="mine_setting">设置</string>
@@ -21,5 +21,7 @@
     <string name="notification_tips">你现在无法收到新消息通知。请到系统“设置”-“应用”-“业务圈”-“通知”中开启</string>
 
     <string name="scan_two_code_tips">将二维码图案放在取景框内，即可自动扫描</string>
+    <string name="description">Hugh Michael Jackman is an Australian actor, singer and producer. Jackman has won international recognition for playing different roles in various film genres. \n\nHe is best known for his long-running role as Wolverine in the X-Men film series, as well as for his lead roles in the romantic-comedy fantasy Kate &amp; Leopold (2001), the action-horror film Van Helsing (2004)...
+    \n\nHugh Michael Jackman is an Australian actor, singer and producer. Jackman has won international recognition for playing different roles in various film genres. \n\nHe is best known for his long-running role as Wolverine in the X-Men film series, as well as for his lead roles in the romantic-comedy fantasy Kate &amp; Leopold (2001), the action-horror film Van Helsing (2004)...</string>
 
 </resources>

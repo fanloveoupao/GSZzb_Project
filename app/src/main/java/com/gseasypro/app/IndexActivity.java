@@ -17,6 +17,7 @@ import com.gseasypro.app.life.IndexLifeFragment;
 import com.gseasypro.app.mine.IndexMineFragment;
 import com.gseasypro.app.school.IndexSchoolFragment;
 import com.gseasypro.app.school.activity.BeautifulGsActivity;
+import com.gseasypro.app.school.activity.GsBestActivity;
 import com.gseasypro.app.school.activity.SearchNewsActivity;
 
 import app.gseasypro.com.utils.PresenterActivity;
@@ -127,6 +128,7 @@ public class IndexActivity extends PresenterActivity<IndexPresenter, IndexPresen
                     @Override
                     public void onClick(View v) {
                         moreMenuPopupWindow.dismiss();
+                        launch(GsBestActivity.class, false);
                     }
                 });
         moreMenuPopupWindow.getContentView().findViewById(R.id.rl_scan_qr_code)

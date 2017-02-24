@@ -43,7 +43,7 @@
             android:drawableLeft="@mipmap/icon_add_fri"
             android:drawablePadding="10dp"
             android:gravity="center"
-            android:text="添加好友"
+            android:text="广师最佳"
             android:textColor="@color/white_ffffff"
             android:textSize="@dimen/font_32" />
     </RelativeLayout>

@@ -21,13 +21,20 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/NoTitleNoTraslucentTheme">
-        <activity android:name=".IndexActivity">
+        <activity
+            android:name=".activity.SplashActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:theme="@style/ActivityStyle">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".IndexActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:theme="@style/ActivityStyle" />
         <activity android:name=".school.activity.SearchNewsActivity" />
         <activity android:name=".school.activity.BeautifulGsActivity" />
         <activity android:name=".school.activity.GsCommentsActivity" />
@@ -36,7 +43,9 @@
             android:configChanges="keyboardHidden|orientation"
             android:theme="@style/ActivityStyle"
             android:windowSoftInputMode="stateAlwaysHidden" />
-        <activity android:name=".activity.H5Activity"></activity>
+        <activity android:name=".activity.H5Activity" />
+        <activity android:name=".learn.activity.SelectedBlogSubActivity" />
+        <activity android:name=".school.activity.GsBestActivity"></activity>
     </application>
 
 </manifest>

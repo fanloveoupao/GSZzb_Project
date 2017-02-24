@@ -41,7 +41,7 @@ public class BeautifulGsActivity extends PresenterActivity<BeautifulGsPresenter,
     protected void initView(@Nullable Bundle savedInstanceState) {
         setContentView(R.layout.activity_beautiful_gs);
         ButterKnife.bind(this);
-        mTitleBar.setCenterText("最美广师");
+        mTitleBar.setLeftText("最美广师");
         mTitleBar.setBackClick(this);
         mMultiStateView.setViewState(MultiStateView.VIEW_STATE_CONTENT);
         gsAdapter = new BeautifulGsAdapter(this, new ArrayList<BeautifulGsItemBean>());
