@@ -50,7 +50,12 @@ public class GsBestDetailFragment extends DialogPresenterFragment<GsBestDetailPr
         View mView = inflater.inflate(R.layout.fragment_gs_best_detail, container, false);
         ButterKnife.bind(this, mView);
         mTitleBar.setLeftText("王老师");
-        mTitleBar.setBackClick(getBaseActivity());
+        mTitleBar.setBackViewOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dismiss();
+            }
+        });
         initView();
 
         return mView;

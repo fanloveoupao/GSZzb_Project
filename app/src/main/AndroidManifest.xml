@@ -45,7 +45,8 @@
             android:windowSoftInputMode="stateAlwaysHidden" />
         <activity android:name=".activity.H5Activity" />
         <activity android:name=".learn.activity.SelectedBlogSubActivity" />
-        <activity android:name=".school.activity.GsBestActivity"></activity>
+        <activity android:name=".school.activity.GsBestActivity" />
+        <activity android:name=".mine.activity.MyElderSisterActivity"></activity>
     </application>
 
 </manifest>
