@@ -14,5 +14,4 @@ public class MyElderSisterBean {
     public List<String> keywords;
     public String content;
     public String gaduateWork;
-    public String firstBlog;
 }

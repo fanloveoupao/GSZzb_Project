@@ -35,7 +35,7 @@ public class IndexMineFragment extends PresenterFragment<IndexMinePresenter, Ind
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_index_mine, container, false);
         ButterKnife.bind(this, view);
-        ImageLoader.loadIcon("http://img3.imgtn.bdimg.com/it/u=2385851853,1861743018&fm=23&gp=0.jpg", mImgvIcon, true, true);
+        ImageLoader.loadIcon("http://setc.gpnu.edu.cn/img/logo.png", mImgvIcon, true, true);
         return view;
     }
 

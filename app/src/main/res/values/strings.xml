@@ -7,7 +7,7 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <!--主界面-我-->
-    <string name="mine_prompt">完善资料，获取适合您的项目和人脉</string>
+    <string name="mine_prompt">完善资料，获取适合您的请求和人脉</string>
     <string name="mine_name">刘远西</string>
     <string name="mine_position">（职位为空）</string>
     <string name="mine_friends_num">通知</string>
@@ -23,5 +23,16 @@
     <string name="scan_two_code_tips">将二维码图案放在取景框内，即可自动扫描</string>
     <string name="description">Hugh Michael Jackman is an Australian actor, singer and producer. Jackman has won international recognition for playing different roles in various film genres. \n\nHe is best known for his long-running role as Wolverine in the X-Men film series, as well as for his lead roles in the romantic-comedy fantasy Kate &amp; Leopold (2001), the action-horror film Van Helsing (2004)...
     \n\nHugh Michael Jackman is an Australian actor, singer and producer. Jackman has won international recognition for playing different roles in various film genres. \n\nHe is best known for his long-running role as Wolverine in the X-Men film series, as well as for his lead roles in the romantic-comedy fantasy Kate &amp; Leopold (2001), the action-horror film Van Helsing (2004)...</string>
-
+    <string name="hongniang_search_null">广师未能找到双方都有适合对方的请求</string>
+    <string name="hongniang_search_null_title">通常广师找不到的原因：</string>
+    <string name="hongniang_search_null_reason1">1、你的请求要求范围较窄，试试</string>
+    <string name="hongniang_search_null_reason2">2、你已有的请求不适合其他师兄师姐</string>
+    <string name="hongniang_publish_again">再发布条请求看看</string>
+    <string name="hongniang_use_finsh">广师每天职位每个用户牵线10个师兄师姐</string>
+    <string name="hongniang_use_finsh_tips">请认真对待每条可能交换的请求</string>
+    <string name="hongniang_project_show_tips">你发布的请求越多，广师帮助牵线的师兄师姐越多。</string>
+    <string name="hongniang_setting_tips">告诉广师你想要什么样的请求。</string>
+    <string name="hongniang_searching">广师正在为你寻找合适的师兄师姐。</string>
+    <string name="hongniang_searching_tips">你发布的请求越多，广师能够配对的师兄师姐越多。</string>
+    <string name="hongniang_search_tips">广师帮你找到双方都有适合对方请求的人，双方都需要至少1个请求才能配对。</string>
 </resources>

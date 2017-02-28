@@ -5,6 +5,7 @@ import android.app.Activity;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 
+import com.fastaccess.permission.base.PermissionFragmentHelper;
 import com.fastaccess.permission.base.callback.OnPermissionCallback;
 
 import app.gseasypro.com.utils.ToastUtils;
@@ -18,25 +19,27 @@ public abstract class PermissionHelper {
 
     public interface OnPermissionListener {
         void onPermissionGranted(@NonNull String[] permissionName);
+
         void onPermissionDeclined(@NonNull String[] permissionName);
     }
 
 
     private static class ActivityPermissionHelper extends PermissionHelper {
         private final com.fastaccess.permission.base.PermissionHelper helper;
+
         public ActivityPermissionHelper(final Activity activity) {
             helper = com.fastaccess.permission.base.PermissionHelper.getInstance(activity, new OnPermissionCallback() {
                 @Override
                 public void onPermissionGranted(@NonNull String[] permissionName) {
                     final OnPermissionListener listener = onPermissionListener;
-                    if(listener != null)
+                    if (listener != null)
                         listener.onPermissionGranted(permissionName);
                 }
 
                 @Override
                 public void onPermissionDeclined(@NonNull String[] permissionName) {
                     final OnPermissionListener listener = onPermissionListener;
-                    if(listener != null)
+                    if (listener != null)
                         listener.onPermissionDeclined(permissionName);
                 }
 
@@ -64,12 +67,13 @@ public abstract class PermissionHelper {
 
         /**
          * 获取授权
-         * @param force true 就算用户拒绝过依然申请
+         *
+         * @param force       true 就算用户拒绝过依然申请
          * @param permission
          * @param permissions
          */
-        public void request(boolean force, String permission, String... permissions){
-            if(permissions == null || permissions.length == 0)
+        public void request(boolean force, String permission, String... permissions) {
+            if (permissions == null || permissions.length == 0)
                 helper.setForceAccepting(force).request(permission);
             else {
                 String[] newPermissions = new String[permissions.length + 1];
@@ -83,10 +87,11 @@ public abstract class PermissionHelper {
 
         /**
          * 获取授权
-         * @param force true，就算用户拒绝过依然申请
+         *
+         * @param force      true，就算用户拒绝过依然申请
          * @param permission
          */
-        public void request(boolean force, String permission){
+        public void request(boolean force, String permission) {
             request(force, permission, new String[0]);
         }
 
@@ -94,9 +99,20 @@ public abstract class PermissionHelper {
         public boolean isGranted(String permission) {
             return helper.isPermissionGranted(permission);
         }
+
+        @Override
+        public com.fastaccess.permission.base.PermissionHelper getBaseActivityHelper() {
+            return helper;
+        }
+
+        @Override
+        public PermissionFragmentHelper getBaseFragmentHelper() {
+            return null;
+        }
     }
+
     private static class FragmentPermissionHelper extends PermissionHelper {
-        private  final com.fastaccess.permission.base.PermissionFragmentHelper helper;
+        private final com.fastaccess.permission.base.PermissionFragmentHelper helper;
 
         public FragmentPermissionHelper(final Fragment fragment) {
             helper = com.fastaccess.permission.base.PermissionFragmentHelper.getInstance(fragment, new OnPermissionCallback() {
@@ -105,14 +121,14 @@ public abstract class PermissionHelper {
                 @Override
                 public void onPermissionGranted(@NonNull String[] permissionName) {
                     final OnPermissionListener listener = onPermissionListener;
-                    if(listener != null)
+                    if (listener != null)
                         listener.onPermissionGranted(permissionName);
                 }
 
                 @Override
                 public void onPermissionDeclined(@NonNull String[] permissionName) {
                     final OnPermissionListener listener = onPermissionListener;
-                    if(listener != null)
+                    if (listener != null)
                         listener.onPermissionDeclined(permissionName);
                 }
 
@@ -138,8 +154,8 @@ public abstract class PermissionHelper {
             });
         }
 
-        public void request(boolean force, String permission, String... permissions){
-            if(permissions == null || permissions.length == 0)
+        public void request(boolean force, String permission, String... permissions) {
+            if (permissions == null || permissions.length == 0)
                 helper.setForceAccepting(force).request(permission);
             else {
                 String[] newPermissions = new String[permissions.length + 1];
@@ -151,7 +167,7 @@ public abstract class PermissionHelper {
             }
         }
 
-        public void request(boolean force, String permission){
+        public void request(boolean force, String permission) {
             request(force, permission, new String[0]);
         }
 
@@ -159,12 +175,23 @@ public abstract class PermissionHelper {
         public boolean isGranted(String permission) {
             return helper.isPermissionGranted(permission);
         }
+
+        @Override
+        public com.fastaccess.permission.base.PermissionHelper getBaseActivityHelper() {
+            return null;
+        }
+
+        @Override
+        public PermissionFragmentHelper getBaseFragmentHelper() {
+            return helper;
+        }
     }
 
-    public static PermissionHelper createActivityHelper(Activity activity){
+    public static PermissionHelper createActivityHelper(Activity activity) {
         return new ActivityPermissionHelper(activity);
     }
-    public static PermissionHelper createFragmentHelper(Fragment fragment){
+
+    public static PermissionHelper createFragmentHelper(Fragment fragment) {
         return new FragmentPermissionHelper(fragment);
     }
 
@@ -172,26 +199,34 @@ public abstract class PermissionHelper {
 
     /**
      * 获取授权
-     * @param force true 就算用户拒绝过依然申请
+     *
+     * @param force       true 就算用户拒绝过依然申请
      * @param permission
      * @param permissions
      */
     public abstract void request(boolean force, String permission, String... permissions);
+
     /**
      * 获取授权
-     * @param force true，就算用户拒绝过依然申请
+     *
+     * @param force      true，就算用户拒绝过依然申请
      * @param permission
      */
     public abstract void request(boolean force, String permission);
+
     public abstract boolean isGranted(String permission);
+
+    public abstract com.fastaccess.permission.base.PermissionHelper getBaseActivityHelper();
+
+    public abstract com.fastaccess.permission.base.PermissionFragmentHelper getBaseFragmentHelper();
 
     public void setOnPermissionListener(OnPermissionListener onPermissionListener) {
         this.onPermissionListener = onPermissionListener;
     }
 
 
-    String toChinesePermissionName(String permission){
-        switch (permission){
+    String toChinesePermissionName(String permission) {
+        switch (permission) {
             case Manifest.permission.RECORD_AUDIO:
                 return "麦克风";
             default:

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:layout_width="match_parent"
-              android:layout_height="350dp"
-              android:background="@drawable/shape_viewpager_bg"
-              android:orientation="vertical">
+    android:layout_width="match_parent"
+    android:layout_height="350dp"
+    android:background="@drawable/shape_viewpager_bg"
+    android:orientation="vertical">
 
 
     <TextView
@@ -15,9 +15,9 @@
         android:paddingLeft="@dimen/padding_15"
         android:paddingRight="@dimen/padding_15"
         android:paddingTop="25dp"
-        android:text="2小时4分钟后红娘重新为你牵线项目"
+        android:text="2小时4分钟后广师重新为你牵线项目"
         android:textColor="@color/orange_ff5500"
-        android:textSize="@dimen/font_32"/>
+        android:textSize="@dimen/font_32" />
 
 
     <TextView
@@ -32,11 +32,10 @@
         android:text="点击重新牵线项目"
         android:textColor="@color/white_ffffff"
         android:textSize="@dimen/font_30"
-        android:visibility="gone"/>
+        android:visibility="gone" />
 
 
-    <View
-        style="@style/horizontal_line"/>
+    <View style="@style/horizontal_line" />
 
 
     <RelativeLayout
@@ -52,9 +51,9 @@
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
             android:lineSpacingExtra="5dp"
-            android:text="你发布的项目越多\n红娘帮你牵线的项目越多"
+            android:text="你发布的请求越多\n广师帮你牵线的师兄师姐越多"
             android:textColor="@color/gray_999999"
-            android:textSize="@dimen/font_30"/>
+            android:textSize="@dimen/font_30" />
 
 
         <TextView
@@ -67,9 +66,9 @@
             android:background="@drawable/selector_orange_button_bg"
             android:clickable="true"
             android:gravity="center"
-            android:text="发布项目"
+            android:text="发布请求"
             android:textColor="@color/white_ffffff"
-            android:textSize="@dimen/font_32"/>
+            android:textSize="@dimen/font_32" />
 
 
     </RelativeLayout>

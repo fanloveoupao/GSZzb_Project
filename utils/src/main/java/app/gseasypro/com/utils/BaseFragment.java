@@ -1,5 +1,6 @@
 package app.gseasypro.com.utils;
 
+import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 
 import com.example.IView;
@@ -64,5 +65,11 @@ public class BaseFragment extends Fragment implements IView {
     @Override
     public void onWarn(String message) {
 
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        permissionHelper.getBaseFragmentHelper().onRequestPermissionsResult(requestCode, permissions, grantResults);
     }
 }

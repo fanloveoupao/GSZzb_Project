@@ -61,14 +61,7 @@ public class MyEideSisterAdapter extends PagerAdapter {
             TextView mTvBusiness = (TextView) view.findViewById(R.id.tv_business);
             TextView mTvAddress = (TextView) view.findViewById(R.id.tv_address);
             TextView mTvFollowDetail = (TextView) view.findViewById(R.id.tv_follow_detail);
-            TextView mBtnCheckDetail = (TextView) view.findViewById(R.id.btn_check_detail);
-            TextView mBtnNotSuit = (TextView) view.findViewById(R.id.btn_not_suit);
-            TextView mTvChat = (TextView) view.findViewById(R.id.tv_chat);
-            TextView mTvExhangeProject = (TextView) view.findViewById(R.id.tv_exhange_project);
-            TextView mTvOther = (TextView) view.findViewById(R.id.tv_other);
-
             final MyElderSisterBean bean = data.get(position);
-
             ImageLoader.loadIcon(Uri.parse(bean.image), mIvHead, true, true);
             mTvJob.setText(bean.college + "");
             mTvBusiness.setText(bean.signature);
@@ -82,9 +75,8 @@ public class MyEideSisterAdapter extends PagerAdapter {
                         content = content.replace(keyword, HtmlTextUtils.color(HtmlTextUtils.COLOR_ORANGE, keyword));
                     }
                 }
-                mTvFollowDetail.setText(content);
+                mTvFollowDetail.setText(Html.fromHtml(content));
             }
-            mTvExhangeProject.setText(bean.firstBlog);
 
         } else {
             //添加最后一个View
@@ -98,5 +90,10 @@ public class MyEideSisterAdapter extends PagerAdapter {
     @Override
     public void destroyItem(ViewGroup container, int position, Object object) {
         container.removeView((View) object);
+    }
+
+    public void setNewData(List<MyElderSisterBean> data) {
+        this.data = data;
+        notifyDataSetChanged();
     }
 }

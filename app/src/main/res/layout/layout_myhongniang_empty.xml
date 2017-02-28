@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ll_empty"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white_ffffff"
+    android:orientation="vertical"
+    android:visibility="gone"
+
+    >
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="50dp"
+        android:background="@mipmap/icon_honhgniang_phtoto" />
+
+
+    <LinearLayout
+        android:id="@+id/ll_no_suit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_16"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/hongniang_search_null"
+            android:textColor="@color/orange_ff5500"
+            android:textSize="@dimen/font_30" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="23dp"
+            android:layout_marginTop="40dp"
+            android:text="@string/hongniang_search_null_title"
+            android:textColor="@color/gray_888888"
+            android:textSize="@dimen/font_30" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="24dp"
+            android:layout_marginLeft="23dp"
+            android:layout_marginTop="6dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:text="@string/hongniang_search_null_reason1"
+                android:textColor="@color/gray_888888"
+                android:textSize="@dimen/font_30" />
+
+            <TextView
+                android:id="@+id/tv_modify_setting"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:text="修改设置"
+                android:textColor="@color/blue_1177ff"
+                android:textSize="@dimen/font_30" />
+
+
+        </LinearLayout>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="23dp"
+            android:layout_marginTop="6dp"
+            android:text="@string/hongniang_search_null_reason2"
+            android:textColor="@color/gray_888888"
+            android:textSize="@dimen/font_30" />
+
+
+        <TextView
+            android:id="@+id/tv_publish_again"
+            android:layout_width="wrap_content"
+            android:layout_height="24dp"
+            android:layout_marginLeft="47dp"
+            android:layout_marginTop="4dp"
+            android:gravity="center_vertical"
+            android:text="@string/hongniang_publish_again"
+            android:textColor="@color/blue_1177ff"
+            android:textSize="@dimen/font_30" />
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/ll_use_finsh"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_16"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/hongniang_use_finsh"
+            android:textColor="@color/orange_ff5500"
+            android:textSize="@dimen/font_30" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="12dp"
+            android:text="@string/hongniang_use_finsh_tips"
+            android:textColor="@color/gray_888888"
+            android:textSize="@dimen/font_30" />
+
+
+    </LinearLayout>
+
+
+</LinearLayout>
+
+
