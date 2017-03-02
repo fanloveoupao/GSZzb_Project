@@ -133,7 +133,7 @@ public class MyElderSisterActivity extends PresenterActivity<MyElderSisterPresen
         }
         if (state == STATE_SEARCH) {
             mWhewView.start();
-            ImageLoader.loadIcon("http://setc.gpnu.edu.cn/img/logo.png", mIvHead, true, true);
+            ImageLoader.loadIcon("https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=3344085265,3893608825&fm=23&gp=0.jpg", mIvHead, true, true);
         }
     }
 

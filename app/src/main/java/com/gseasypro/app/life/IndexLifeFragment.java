@@ -9,12 +9,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.chad.library.adapter.base.BaseQuickAdapter;
-import com.chad.library.adapter.base.listener.OnItemClickListener;
 import com.example.presenter.IndexLifePresenter;
 import com.example.resources.bean.ItemLifeBean;
 import com.gseasypro.app.R;
-import com.gseasypro.app.activity.H5Activity;
 import com.gseasypro.app.adapter.life.IndexLifeAdapter;
 import com.kennyc.view.MultiStateView;
 
@@ -57,12 +54,7 @@ public class IndexLifeFragment extends PresenterFragment<IndexLifePresenter, Ind
         adapter = new IndexLifeAdapter(new ArrayList<ItemLifeBean>());
         mRvLifelist.setAdapter(adapter);
         getPresenter().initLifeItem();
-        mRvLifelist.addOnItemTouchListener(new OnItemClickListener() {
-            @Override
-            public void SimpleOnItemClick(BaseQuickAdapter baseQuickAdapter, View view, int i) {
-                H5Activity.launch(getBaseActivity(), "www.gdin.edu.cn");
-            }
-        });
+
     }
 
     @Override

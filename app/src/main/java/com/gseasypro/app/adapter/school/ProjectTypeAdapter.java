@@ -1,6 +1,5 @@
 package com.gseasypro.app.adapter.school;
 
-import android.content.Context;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -19,7 +18,7 @@ import java.util.List;
 
 public class ProjectTypeAdapter<T extends LinearBean> extends BaseQuickAdapter<SubsBean<T>> {
 
-    public ProjectTypeAdapter(Context context, List<SubsBean<T>> typeFirstBeanList) {
+    public ProjectTypeAdapter(List<SubsBean<T>> typeFirstBeanList) {
         super(R.layout.item_city, typeFirstBeanList);
     }
 

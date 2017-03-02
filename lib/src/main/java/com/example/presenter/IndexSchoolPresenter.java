@@ -75,6 +75,17 @@ public class IndexSchoolPresenter extends BasePresenter<IndexSchoolPresenter.Ind
                 keyWords.add("道路施工");
                 keyWords.add("无法适应车辆通行");
                 projectBean.keywords = keyWords;
+            } else if (i % 3 == 0) {
+                userBean.image = "https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=3344085265,3893608825&fm=23&gp=0.jpg";
+                userBean.name = "辅导员";
+                userBean.tag = "公示";
+                projectBean.name = "师资力量";
+                projectBean.content = "学院现具有一支职称、学历、年龄结构较为合理的师资队伍，现有教职员工50人，其中教授5人，副高以上职称";
+                List<String> keyWords = new ArrayList<>();
+                keyWords.add("职称");
+                keyWords.add("学历");
+                keyWords.add("年龄");
+                projectBean.keywords = keyWords;
             } else {
                 userBean.name = "传播学院";
                 userBean.tag = "通知";

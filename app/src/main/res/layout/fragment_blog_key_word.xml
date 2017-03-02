@@ -1,0 +1,71 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.gseasypro.app.learn.fragment.BlogKeyWordFragment">
+
+    <app.gseasypro.com.utils.ui.widget.TitleBar
+        android:id="@+id/title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"></app.gseasypro.com.utils.ui.widget.TitleBar>
+
+    <LinearLayout
+        android:id="@+id/ll_null"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white_ffffff"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="46.5dp"
+            android:text="添加项目关键字"
+            android:textColor="@color/black_666666"
+            android:textSize="@dimen/font_28" />
+
+        <EditText
+            android:id="@+id/et_add_keywords"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="3dp"
+            android:background="@null"
+            android:gravity="center"
+            android:hint="最多输入8个字"
+            android:maxLength="8"
+            android:textColor="@color/black_aa333333"
+            android:textColorHint="@color/gray_bbbbbb"
+            android:textSize="@dimen/font_30" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/line_height"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:background="@color/gray_cccccc" />
+
+        <Button
+            android:id="@+id/bt_add_keywords_null"
+            style="@style/OrangeBigButton"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="15dp"
+            android:text="确定" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="12dp"
+            android:text="添加您最常关注的博客关键字，例如：技术、毕业，系统将为您推荐更精准的合适博客"
+            android:textColor="@color/black_999999"
+            android:textSize="@dimen/font_26" />
+    </LinearLayout>
+
+</LinearLayout>

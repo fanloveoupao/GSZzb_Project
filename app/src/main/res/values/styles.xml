@@ -97,4 +97,47 @@
         <item name="android:windowIsTranslucent">true</item>
         <item name="android:windowBackground">@color/transparent</item>
     </style>
+
+    <style name="SwitchButtonStyle">
+        <item name="android:paddingLeft">10dp</item>
+        <item name="android:paddingRight">10dp</item>
+        <item name="android:paddingTop">4dp</item>
+        <item name="android:paddingBottom">4dp</item>
+    </style>
+    <!--向右箭头-->
+    <style name="GrayArrow">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">15dp</item>
+        <item name="android:src">@mipmap/arrow_gray_right</item>
+        <item name="android:duplicateParentState">true</item>
+        <item name="android:layout_marginLeft">10dip</item>
+        <item name="android:layout_gravity">center_vertical</item>
+    </style>
+    <!--个人资料编辑 左侧文字说明的样式-->
+    <style name="edit_personal_explain">
+        <item name="android:layout_width">90dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:duplicateParentState">true</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:textColor">@color/black_333333</item>
+        <item name="android:textSize">@dimen/font_32</item>
+    </style>
+    <!--个人资料编辑 右侧文字内容的样式-->
+
+    <style name="edit_personal_content">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:duplicateParentState">true</item>
+        <item name="android:gravity">center_vertical|right</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:textColor">@color/black_000000</item>
+        <item name="android:textColorHint">@color/gray_cccccc</item>
+        <item name="android:textSize">@dimen/font_30</item>
+    </style>
+
+    <style name="InputDialogFragment" parent="TranslucentDialogFragment">
+        <item name="android:windowSoftInputMode">stateAlwaysVisible|adjustResize</item>
+    </style>
 </resources>

@@ -82,7 +82,6 @@ public class BaseListDialogFragment extends SimpleDialogFragment {
         dialog.setCancelable(mCancelable);
         TextView tvTitle = (TextView) view.findViewById(R.id.tv_title);
         View titleLine = view.findViewById(R.id.title_line);
-        mRecyclerView = (RecyclerView) view.findViewById(R.id.rv_list);
         if (mTitle != null) {
             tvTitle.setText(mTitle);
             tvTitle.setTextColor(mTitleColor);

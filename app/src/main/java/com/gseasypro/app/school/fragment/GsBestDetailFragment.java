@@ -62,7 +62,7 @@ public class GsBestDetailFragment extends DialogPresenterFragment<GsBestDetailPr
     }
 
     private void initView() {
-        ImageLoader.loadIcon(Uri.parse("http://setc.gpnu.edu.cn/img/logo.png"), mIvavatar, true, true);
+        ImageLoader.loadIcon(Uri.parse("https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=3344085265,3893608825&fm=23&gp=0.jpg"), mIvavatar, true, true);
     }
 
 }

@@ -28,8 +28,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="10dp"
-            tools:text="正在加载中..."
-            tools:visibility="visible" />
+            android:text="请稍后..." />
     </LinearLayout>
 
 </LinearLayout>

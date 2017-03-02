@@ -35,4 +35,45 @@
     <string name="hongniang_searching">广师正在为你寻找合适的师兄师姐。</string>
     <string name="hongniang_searching_tips">你发布的请求越多，广师能够配对的师兄师姐越多。</string>
     <string name="hongniang_search_tips">广师帮你找到双方都有适合对方请求的人，双方都需要至少1个请求才能配对。</string>
+    <!--设置-->
+    <string name="setting_title">设置</string>
+    <string name="private_setting">隐私设置</string>
+    <string name="black_list">黑名单</string>
+    <string name="other_setting">其他</string>
+    <string name="new_message_setting">新消息通知</string>
+    <string name="voice">声音</string>
+    <string name="circle_voice">群聊声音</string>
+    <string name="shake">震动</string>
+    <string name="circle_shake">群聊震动</string>
+    <string name="set_top">聊天置顶</string>
+    <string name="about">关于</string>
+    <string name="exit">退出登录</string>
+    <string name="exit_warning">确定要退出登录吗？</string>
+    <!-- 核对个人资料 -->
+    <string name="name">姓名</string>
+    <string name="fill_in_name">请输入姓字</string>
+    <string name="fill_in_compary">请输入公司名称</string>
+    <string name="fill_in_password">请输入6-20位密码</string>
+    <string name="public_ywq_please_choose">请选择</string>
+
+    <!--个人资料编辑-->
+    <string name="user_info_personal_contractor_hint">如果你是承包商请选择</string>
+    <string name="user_info_gender">性别</string>
+    <string name="user_info_phone1">手机</string>
+    <string name="user_info_compary_name">公司</string>
+    <string name="user_info_male">男</string>
+    <string name="user_info_female">女</string>
+    <string name="user_info_hobbies">兴趣爱好</string>
+    <string name="user_info_position">职位</string>
+    <string name="user_info_product_management">经营产品</string>
+    <string name="user_info_client_location">业务地区</string>
+    <string name="user_info_business_experience">业务经验</string>
+    <string name="user_info_birthday">生日</string>
+    <string name="user_info_native_place">籍贯</string>
+    <string name="user_info_personal_hobby_hint">让合作伙伴更多了解你</string>
+    <string name="user_info_personal_birthplace_hint">选择故乡，发现老乡</string>
+    <string name="user_info_public_ywq_finish">完成</string>
+
+    <string name="info_name">姓名</string>
+    <string name="info_company">公司全称</string>
 </resources>

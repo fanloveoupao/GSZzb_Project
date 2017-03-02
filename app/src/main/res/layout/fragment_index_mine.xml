@@ -150,7 +150,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_centerHorizontal="true"
-                            android:text="0"
+                            android:text="11"
                             android:textColor="@color/orange_ff5500"
                             android:textSize="@dimen/font_38" />
 

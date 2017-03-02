@@ -47,7 +47,19 @@
         <activity android:name=".learn.activity.SelectedBlogSubActivity" />
         <activity android:name=".school.activity.GsBestActivity" />
         <activity android:name=".mine.activity.MyElderSisterActivity" />
-        <activity android:name=".learn.activity.CollegeTwoLeaveActivity"></activity>
+        <activity android:name=".learn.activity.CollegeTwoLeaveActivity" />
+        <activity android:name=".mine.activity.MyLectureActivity" />
+
+        <receiver android:name="app.gseasypro.com.utils.receiver.SystemReceiver">
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+            </intent-filter>
+        </receiver>
+
+        <activity android:name=".mine.activity.MyCollectionActivity" />
+        <activity android:name=".mine.activity.SettingActivity" />
+        <activity android:name=".mine.activity.QRCodeActivity" />
+        <activity android:name=".mine.activity.EditPersonActivity"></activity>
     </application>
 
 </manifest>

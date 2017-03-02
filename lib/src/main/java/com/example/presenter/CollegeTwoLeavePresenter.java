@@ -31,6 +31,8 @@ public class CollegeTwoLeavePresenter extends BasePresenter<CollegeTwoLeavePrese
         for (int i = 0; i < 7; i++) {
             BaseClassBean bean = new BaseClassBean();
             bean.name = "传播学院";
+            if (i % 2 == 0)
+                bean.name = "文学院";
             List<BaseClassBean> beanList = new ArrayList<>();
             BaseClassBean bean0 = new BaseClassBean();
             bean0.name = "数字媒体";

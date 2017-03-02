@@ -130,7 +130,7 @@ public class CommonDataFilterView extends RelativeLayout implements View.OnClick
                         public void run() {
                             LinearLayoutManager manager = new LinearLayoutManager(mContext);
                             mTypeView.setLayoutManager(manager);
-                            mTypeAdapter = new ProjectTypeAdapter(mContext, mTypeBeanList);
+                            mTypeAdapter = new ProjectTypeAdapter(mTypeBeanList);
                             mTypeView.setAdapter(mTypeAdapter);
                         }
                     });
@@ -151,7 +151,7 @@ public class CommonDataFilterView extends RelativeLayout implements View.OnClick
                         public void run() {
                             LinearLayoutManager manager = new LinearLayoutManager(mContext);
                             mStageView.setLayoutManager(manager);
-                            mStageAdapter = new ProjectTypeAdapter(mContext, mStageBeanList);
+                            mStageAdapter = new ProjectTypeAdapter(mStageBeanList);
                             mStageView.setAdapter(mStageAdapter);
                         }
                     });
