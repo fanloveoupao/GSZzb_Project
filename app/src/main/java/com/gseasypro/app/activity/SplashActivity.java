@@ -5,8 +5,8 @@ import android.os.Handler;
 import android.support.annotation.Nullable;
 
 import com.example.presenter.SplashPresenter;
-import com.gseasypro.app.IndexActivity;
 import com.gseasypro.app.R;
+import com.gseasypro.app.login.LoginActivity;
 
 import app.gseasypro.com.utils.PresenterActivity;
 import app.gseasypro.com.utils.widget.LauncherView;
@@ -31,7 +31,7 @@ public class SplashActivity extends PresenterActivity<SplashPresenter, SplashPre
                 new Handler().postDelayed(new Runnable() {
                     @Override
                     public void run() {
-                        launch(IndexActivity.class, true);
+                        launch(LoginActivity.class, true);
                     }
                 }, 800);
 

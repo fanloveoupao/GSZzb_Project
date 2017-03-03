@@ -190,7 +190,7 @@
 
                 <TextView
                     style="@style/edit_personal_explain"
-                    android:text="公司" />
+                    android:text="学院" />
 
                 <TextView
                     android:id="@+id/tv_edit_personal_file_compary"
@@ -221,7 +221,7 @@
 
                 <TextView
                     style="@style/edit_personal_explain"
-                    android:text="职位" />
+                    android:text="专业" />
 
                 <TextView
                     android:id="@+id/tv_edit_personal_file_position"
@@ -252,7 +252,7 @@
 
                 <TextView
                     style="@style/edit_personal_explain"
-                    android:text="业务经验" />
+                    android:text="年级" />
 
                 <TextView
                     android:id="@+id/tv_edit_personal_file_business_experience"
@@ -284,7 +284,7 @@
                     android:paddingLeft="15dp"
                     android:paddingRight="15dp"
                     android:paddingTop="5dp"
-                    android:text="完成以下信息，将推荐适合您的合作项目"
+                    android:text="完成以下信息，将推荐适合您的师兄师姐"
                     android:textColor="@color/grey_888888"
                     android:textSize="@dimen/font_28" />
 
@@ -307,7 +307,7 @@
 
                     <TextView
                         style="@style/edit_personal_explain"
-                        android:text="业务地区" />
+                        android:text="具体主修" />
 
                     <TextView
                         android:id="@+id/tv_edit_personal_file_business_region"
@@ -339,7 +339,7 @@
                     <TextView
                         style="@style/edit_personal_explain"
                         android:layout_width="140dp"
-                        android:text="跟进的项目类型" />
+                        android:text="擅长的技能" />
 
                     <TextView
                         android:id="@+id/tv_edit_project_style"
@@ -370,7 +370,7 @@
                     <TextView
                         style="@style/edit_personal_explain"
                         android:layout_width="140dp"
-                        android:text="跟进的项目阶段" />
+                        android:text="擅长技能的阶段" />
 
                     <TextView
                         android:id="@+id/tv_edit_project_stage"
@@ -400,7 +400,7 @@
                     <TextView
                         style="@style/edit_personal_explain"
                         android:layout_width="120dp"
-                        android:text="跟进的关键人" />
+                        android:text="主要负责导师" />
 
                     <TextView
                         android:id="@+id/tv_key_person"
@@ -432,7 +432,7 @@
 
                     <TextView
                         style="@style/edit_personal_explain"
-                        android:text="经营产品" />
+                        android:text="主要作品" />
 
                     <TextView
                         android:id="@+id/tv_edit_personal_file_operate_product"

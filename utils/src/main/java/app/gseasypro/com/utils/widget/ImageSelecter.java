@@ -106,6 +106,7 @@ public class ImageSelecter {
                 .setEnableCrop(true)
                 .setForceCropEdit(true)
                 .setEnableRotate(true)
+                .setEnablePreview(true)//是否开启预览功能
                 .build();
 
         File takePhotoFolder = new File(Environment.getExternalStorageDirectory(), "/DCIM/" + "Gs/");

@@ -4,8 +4,46 @@
         <item quantity="one">%d like</item>
         <item quantity="other">%d likes</item>
     </plurals>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <!--通用-->
+    <string name="get_verify_code">获取验证码</string>
+    <string name="next">下一步</string>
+    <string name="confirm">确认</string>
+    <string name="cancel">取消</string>
+
+    <!-- 登录界面 -->
+    <string name="login">登录</string>
+    <string name="passwort_hint">密  码</string>
+    <string name="register">注册</string>
+    <string name="forget_password">忘记密码?</string>
+    <string name="account_hint">请输入手机号/天工帐号</string>
+    <!-- 找回密码 -->
+    <string name="find_tips">请输入您要找回密码的账号关联的手机号</string>
+    <string name="find_phone">请输入您的手机号码</string>
+    <string name="find_newpassword">请输入6-20位密码</string>
+    <string name="cant_find_user">该手机号尚未注册业务圈</string>
+    <string name="find_no_phone">注册时不是用自己的手机号码,</string>
+    <string name="find_no_how">怎么办？</string>
+    <string name="send_verification">提交</string>
+    <string name="instruction">业务圈是实名合作平台，请用您本人的手机号注册或登录，方便合作联系。\n
+        建议您：\n
+        1、重新注册一个自己专属的合作帐号\n
+        2、您的手机也已注册过？请直接登录或找回密码\n
+        3、您有多个帐号？请联系我们合并020-66351168</string>
+    <string name="contact_us">联系我们：</string>
+
+    <!-- 核对个人资料 -->
+    <string name="phone_number">手机&#160;&#160;:&#160;&#160;</string>
+
+    <!-- 填写验证码 -->
+    <string name="get_verification_code">获取验证码</string>
+    <string name="get_verification_wait_code">获取验证码（%s）</string>
+    <string name="login_verification_message">业务圈是您与他人合作的工具，为确保您的信息安全，我们需要通过手机号验证您的身份；如不是你的手机号，请重新注册</string>
+    <string name="login_no_bind_tip">业务圈是您与他人合作的工具，为了方便合作，请先绑定手机号。</string>
+    <string name="verification_tips">我们给您的手机 +86 % 发送了一条短信，请输入手机获取的短信验证码。</string>
+    <string name="hand_in_verification">提交验证码</string>
+    <string name="input_verification">填写验证码</string>
+    <string name="reget_verification_code">重新获取（%s）</string>
+    <string name="account_registered">该手机号码已注册，请换用其它手机号码注册或用该手机号码登录</string>
     <!--主界面-我-->
     <string name="mine_prompt">完善资料，获取适合您的请求和人脉</string>
     <string name="mine_name">刘远西</string>
@@ -70,10 +108,11 @@
     <string name="user_info_business_experience">业务经验</string>
     <string name="user_info_birthday">生日</string>
     <string name="user_info_native_place">籍贯</string>
-    <string name="user_info_personal_hobby_hint">让合作伙伴更多了解你</string>
+    <string name="user_info_personal_hobby_hint">让师兄师姐更多了解你</string>
     <string name="user_info_personal_birthplace_hint">选择故乡，发现老乡</string>
     <string name="user_info_public_ywq_finish">完成</string>
 
     <string name="info_name">姓名</string>
     <string name="info_company">公司全称</string>
+
 </resources>

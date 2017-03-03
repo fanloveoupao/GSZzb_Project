@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white_f3f3f3"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:overScrollMode="always">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical">
+
+            <LinearLayout
+                android:id="@+id/ll_login"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:paddingBottom="60dp">
+
+
+                <ImageView
+                    android:id="@+id/icon"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="66dip"
+                    android:gravity="center"
+                    android:paddingLeft="8dp"
+                    android:paddingRight="8dp"
+                    android:paddingTop="5dp"
+                    android:src="@drawable/logo" />
+
+
+                <LinearLayout
+                    android:id="@+id/ll_login_account"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dip"
+                    android:layout_marginRight="15dip"
+                    android:background="@drawable/shape_radius_gray_square"
+                    android:orientation="vertical">
+
+
+                    <app.gseasypro.com.utils.ui.widget.EnlargeCrossEditText
+                        android:id="@+id/et_login_account"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@null"
+                        android:drawablePadding="15dp"
+                        android:drawableRight="@mipmap/icon_login_clear"
+                        android:focusable="true"
+                        android:focusableInTouchMode="true"
+                        android:hint="@string/account_hint"
+                        android:paddingBottom="15dp"
+                        android:paddingLeft="15dp"
+                        android:paddingRight="15dp"
+                        android:paddingTop="15dp"
+                        android:maxLength="41"
+                        android:textColor="@color/black_333333"
+                        android:textColorHint="@color/gray_999999"
+                        android:textSize="@dimen/font_32"
+                        android:imeOptions="actionNext"
+                        android:singleLine="true" />
+
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1px"
+                        android:background="@color/gray_aaaaaa" />
+
+                    <app.gseasypro.com.utils.ui.widget.EnlargeCrossEditText
+                        android:id="@+id/et_login_password"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@null"
+                        android:drawablePadding="15dp"
+                        android:drawableRight="@mipmap/icon_login_clear"
+                        android:focusable="true"
+                        android:focusableInTouchMode="true"
+                        android:hint="@string/passwort_hint"
+                        android:imeOptions="actionDone"
+                        android:maxLength="20"
+                        android:inputType="textPassword"
+                        android:paddingBottom="15dp"
+                        android:paddingLeft="15dp"
+                        android:paddingRight="15dp"
+                        android:paddingTop="15dp"
+                        android:textColor="@color/black_333333"
+                        android:textColorHint="@color/gray_999999"
+                        android:textSize="@dimen/font_32"
+                        android:singleLine="true" />
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/bt_login"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dip"
+                    android:layout_marginRight="15dip"
+                    android:layout_marginTop="20dip"
+                    android:background="@drawable/selector_orange_button_bg"
+                    android:padding="15dip"
+                    android:text="@string/login"
+                    android:textColor="@color/white_ffffff"
+                    android:textSize="@dimen/font_32" />
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:orientation="horizontal"
+                    android:paddingRight="15dp">
+
+                    <TextView
+                        android:id="@+id/tv_login_register"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="18dip"
+                        android:paddingLeft="18dip"
+                        android:paddingRight="10dip"
+                        android:paddingTop="18dip"
+                        android:text="@string/register"
+                        android:textColor="@color/blue_2277dd"
+                        android:textSize="@dimen/font_28" />
+
+                    <TextView
+                        android:id="@+id/tv_login_forget_password"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="18dip"
+                        android:paddingLeft="10dip"
+                        android:paddingTop="18dip"
+                        android:text="@string/forget_password"
+                        android:textColor="@color/gray_999999"
+                        android:textSize="@dimen/font_28" />
+                </LinearLayout>
+            </LinearLayout>
+        </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>
