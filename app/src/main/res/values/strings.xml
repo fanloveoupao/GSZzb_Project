@@ -15,16 +15,16 @@
     <string name="passwort_hint">密  码</string>
     <string name="register">注册</string>
     <string name="forget_password">忘记密码?</string>
-    <string name="account_hint">请输入手机号/天工帐号</string>
+    <string name="account_hint">请输入手机号/学号</string>
     <!-- 找回密码 -->
     <string name="find_tips">请输入您要找回密码的账号关联的手机号</string>
     <string name="find_phone">请输入您的手机号码</string>
     <string name="find_newpassword">请输入6-20位密码</string>
-    <string name="cant_find_user">该手机号尚未注册业务圈</string>
+    <string name="cant_find_user">该手机号尚未注册广师掌中宝</string>
     <string name="find_no_phone">注册时不是用自己的手机号码,</string>
     <string name="find_no_how">怎么办？</string>
     <string name="send_verification">提交</string>
-    <string name="instruction">业务圈是实名合作平台，请用您本人的手机号注册或登录，方便合作联系。\n
+    <string name="instruction">广师掌中宝是实名学习平台，请用您本人的手机号注册或登录，方便合作联系。\n
         建议您：\n
         1、重新注册一个自己专属的合作帐号\n
         2、您的手机也已注册过？请直接登录或找回密码\n
@@ -37,8 +37,8 @@
     <!-- 填写验证码 -->
     <string name="get_verification_code">获取验证码</string>
     <string name="get_verification_wait_code">获取验证码（%s）</string>
-    <string name="login_verification_message">业务圈是您与他人合作的工具，为确保您的信息安全，我们需要通过手机号验证您的身份；如不是你的手机号，请重新注册</string>
-    <string name="login_no_bind_tip">业务圈是您与他人合作的工具，为了方便合作，请先绑定手机号。</string>
+    <string name="login_verification_message">广师掌中宝是您与他人合作的工具，为确保您的信息安全，我们需要通过手机号验证您的身份；如不是你的手机号，请重新注册</string>
+    <string name="login_no_bind_tip">广师掌中宝是您与他人合作的工具，为了方便合作，请先绑定手机号。</string>
     <string name="verification_tips">我们给您的手机 +86 % 发送了一条短信，请输入手机获取的短信验证码。</string>
     <string name="hand_in_verification">提交验证码</string>
     <string name="input_verification">填写验证码</string>
@@ -56,7 +56,7 @@
     <string name="mine_setting">设置</string>
     <string name="mine_version_update">版本更新</string>
     <string name="password">密码</string>
-    <string name="notification_tips">你现在无法收到新消息通知。请到系统“设置”-“应用”-“业务圈”-“通知”中开启</string>
+    <string name="notification_tips">你现在无法收到新消息通知。请到系统“设置”-“应用”-“广师掌中宝”-“通知”中开启</string>
 
     <string name="scan_two_code_tips">将二维码图案放在取景框内，即可自动扫描</string>
     <string name="description">Hugh Michael Jackman is an Australian actor, singer and producer. Jackman has won international recognition for playing different roles in various film genres. \n\nHe is best known for his long-running role as Wolverine in the X-Men film series, as well as for his lead roles in the romantic-comedy fantasy Kate &amp; Leopold (2001), the action-horror film Van Helsing (2004)...
@@ -90,7 +90,7 @@
     <!-- 核对个人资料 -->
     <string name="name">姓名</string>
     <string name="fill_in_name">请输入姓字</string>
-    <string name="fill_in_compary">请输入公司名称</string>
+    <string name="fill_in_compary">请输入学院名称</string>
     <string name="fill_in_password">请输入6-20位密码</string>
     <string name="public_ywq_please_choose">请选择</string>
 
@@ -98,7 +98,7 @@
     <string name="user_info_personal_contractor_hint">如果你是承包商请选择</string>
     <string name="user_info_gender">性别</string>
     <string name="user_info_phone1">手机</string>
-    <string name="user_info_compary_name">公司</string>
+    <string name="user_info_compary_name">学院</string>
     <string name="user_info_male">男</string>
     <string name="user_info_female">女</string>
     <string name="user_info_hobbies">兴趣爱好</string>
@@ -113,6 +113,9 @@
     <string name="user_info_public_ywq_finish">完成</string>
 
     <string name="info_name">姓名</string>
-    <string name="info_company">公司全称</string>
+    <string name="info_company">学院全称</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>

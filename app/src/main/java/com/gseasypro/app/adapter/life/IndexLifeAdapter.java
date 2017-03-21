@@ -23,4 +23,5 @@ public class IndexLifeAdapter extends BaseQuickAdapter<ItemLifeBean> {
                 .setTextColor(R.id.tv_tag, itemLifeBean.tagColors)
                 .setImageResource(R.id.iv_item, itemLifeBean.imageId);
     }
+
 }

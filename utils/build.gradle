@@ -40,5 +40,6 @@ dependencies {
     compile 'com.github.yoojia:next-qrcode:2.0-2'
     compile 'cn.finalteam:galleryfinal:1.4.8.7'
     compile 'com.flaviofaria:kenburnsview:1.0.7'
+    compile 'com.github.florent37:singledateandtimepicker:1.0.8'
 
 }

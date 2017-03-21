@@ -23,8 +23,8 @@
         <RelativeLayout
             android:id="@+id/project_area_layout"
             android:layout_width="match_parent"
-            android:background="@drawable/selector_item_bg"
-            android:layout_height="50dp">
+            android:layout_height="50dp"
+            android:background="@drawable/selector_item_bg">
 
             <TextView
                 android:id="@+id/project_area"
@@ -67,8 +67,8 @@
         <RelativeLayout
             android:id="@+id/project_type_layout"
             android:layout_width="match_parent"
-            android:background="@drawable/selector_item_bg"
-            android:layout_height="50dp">
+            android:layout_height="50dp"
+            android:background="@drawable/selector_item_bg">
 
             <TextView
                 android:id="@+id/project_type"
@@ -111,8 +111,8 @@
         <RelativeLayout
             android:id="@+id/project_stage_layout"
             android:layout_width="match_parent"
-            android:background="@drawable/selector_item_bg"
-            android:layout_height="50dp">
+            android:layout_height="50dp"
+            android:background="@drawable/selector_item_bg">
 
             <TextView
                 android:id="@+id/project_stage"
@@ -155,8 +155,8 @@
         <RelativeLayout
             android:id="@+id/project_keywords_layout"
             android:layout_width="match_parent"
-            android:background="@drawable/selector_item_bg"
-            android:layout_height="50dp">
+            android:layout_height="50dp"
+            android:background="@drawable/selector_item_bg">
 
             <TextView
                 android:id="@+id/project_keywords"
@@ -194,14 +194,15 @@
                 android:background="@mipmap/arrow_gray" />
         </RelativeLayout>
 
-        <Button
-            android:id="@+id/btn_publish_project"
-            style="@style/OrangeBigButton"
-            android:layout_marginBottom="10dp"
-            android:layout_marginLeft="15dp"
-            android:layout_marginRight="15dp"
-            android:layout_marginTop="15dp"
-            android:text="提交"
-            android:visibility="visible" />
+
     </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_publish_project"
+        style="@style/OrangeBigButton"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="@dimen/margin_40"
+        android:text="提交"
+        android:visibility="visible" />
 </LinearLayout>

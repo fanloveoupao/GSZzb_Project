@@ -1,0 +1,70 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.gseasypro.app.life.fragment.RecordsConsumptionFragment">
+
+    <app.gseasypro.com.utils.ui.widget.TitleBar
+        android:id="@+id/title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"></app.gseasypro.com.utils.ui.widget.TitleBar>
+
+    <LinearLayout
+        android:id="@+id/ll_head_show"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/white_f3f3f3"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/padding_15">
+
+            <TextView
+                android:id="@+id/tv_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2017年3月"
+                android:textColor="@color/black_000000"
+                android:textSize="@dimen/font_28" />
+
+            <TextView
+                android:id="@+id/tv_desc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_5"
+                android:text="支出¥1425.2  收入¥1425.2"
+                android:textColor="@color/gray_5c5c5c"
+                android:textSize="@dimen/font_24" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/iv_date_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/margin_15"
+            android:src="@mipmap/tg_icon_view" />
+    </LinearLayout>
+
+    <com.kennyc.view.MultiStateView
+        android:id="@+id/multiStateView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:msv_emptyView="@layout/blog_empty_view"
+        app:msv_errorView="@layout/view_network_error"
+        app:msv_loadingView="@layout/loading_view"
+        app:msv_viewState="content">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_rc_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"></android.support.v7.widget.RecyclerView>
+    </com.kennyc.view.MultiStateView>
+</LinearLayout>
