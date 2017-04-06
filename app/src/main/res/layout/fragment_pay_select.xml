@@ -1,0 +1,344 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/ll_container"
+        android:background="@color/white_ffffff"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black_666666"
+            android:textSize="@dimen/font_28"
+            android:padding="@dimen/padding_15"
+            android:text="加入天工会"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black_333333"
+            android:textSize="@dimen/font_34"
+            android:gravity="center"
+            android:padding="@dimen/padding_5"
+            android:text="1年服务期"
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/padding_10"
+            android:gravity="center">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black_333333"
+                android:textSize="@dimen/font_30"
+                android:text="合计："/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/orange_ff5500"
+                android:textSize="@dimen/font_30"
+                android:text="¥"/>
+            <TextView
+                android:id="@+id/tv_total"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/orange_ff5500"
+                android:textSize="@dimen/font_30"
+                tools:text="500.00"/>
+        </LinearLayout>
+        <TextView
+            android:id="@+id/tv_present"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/drawable_ff9900_bg"
+            android:textColor="@color/white_ffffff"
+            android:textSize="@dimen/font_26"
+            android:layout_marginTop="@dimen/margin_10"
+            android:padding="5dp"
+            tools:text="优惠：赠送500积分"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_25"
+            android:padding="@dimen/padding_15"
+            android:textColor="@color/black_666666"
+            android:background="@color/gray_f3f3f3"
+            android:textSize="@dimen/font_30"
+            android:text="选择以下支付方式"/>
+
+        <LinearLayout
+            android:id="@+id/ll_alipay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_15"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/padding_15"
+                android:paddingBottom="@dimen/padding_15"
+                android:orientation="horizontal">
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@mipmap/pop_icon_alipay"/>
+                <TextView
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/margin_10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/font_30"
+                    android:textColor="@color/black_333333"
+                    android:text="支付宝支付"/>
+            </LinearLayout>
+            <TextView style="@style/line" android:layout_marginLeft="@dimen/margin_40"/>
+            <LinearLayout
+                android:id="@+id/ll_wechat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/padding_15"
+                android:paddingBottom="@dimen/padding_15"
+                android:orientation="horizontal">
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@mipmap/pop_icon_wechat"/>
+                <TextView
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/margin_10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/font_30"
+                    android:textColor="@color/black_333333"
+                    android:text="微信支付"/>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/fl_bg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/ll_container"
+        >
+    </FrameLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_successful"
+        android:background="@color/transparency_80"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:visibility="gone">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <com.tgnet.android.ywq.widget.PaySuccessIconView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+            </com.tgnet.android.ywq.widget.PaySuccessIconView>
+
+            <TextView
+                android:padding="@dimen/padding_15"
+                android:textColor="@color/white_ffffff"
+                android:gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/font_30"
+                android:lineSpacingExtra="@dimen/padding_8"
+                android:text="支付成功，恭喜晋升天工会会员\n服务有效期1年"/>
+
+            <Button
+                android:background="@drawable/selector_paying_button"
+                android:textColor="@color/white_ffffff"
+                android:textSize="@dimen/font_30"
+                android:id="@+id/btn_quite"
+                android:layout_marginTop="@dimen/margin_15"
+                android:layout_marginBottom="@dimen/margin_15"
+                android:layout_marginLeft="@dimen/margin_20"
+                android:layout_marginRight="@dimen/margin_20"
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:text="确定"/>
+
+            <TextView
+                android:id="@+id/tv_help"
+                android:textSize="@dimen/font_24"
+                android:textColor="@color/blue_1177ff"
+                android:layout_marginTop="@dimen/margin_5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="如何玩转我的会员特权 >>"/>
+        </LinearLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_again"
+        android:background="@color/transparency_80"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        android:gravity="center">
+
+        <LinearLayout
+            android:background="@drawable/drawable_dialog_bg"
+            android:layout_margin="@dimen/margin_40"
+            android:paddingLeft="40dp"
+            android:paddingRight="40dp"
+            android:paddingBottom="20dp"
+            android:paddingTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:textSize="@dimen/font_28"
+                android:textColor="@color/black_333333"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:lineSpacingExtra="@dimen/dp_4"
+                android:paddingBottom="@dimen/padding_5"
+                android:text="支付未成功，是否切换其他支付方式"/>
+
+            <LinearLayout
+                android:id="@+id/ll_alipay_2"
+                android:background="@drawable/shape_alipay_btn"
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:layout_marginTop="@dimen/margin_20"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:clickable="true">
+
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginRight="@dimen/margin_10"
+                    android:src="@mipmap/pop_icon_alipay"/>
+
+                <TextView
+                    android:textSize="@dimen/font_30"
+                    android:textColor="@color/blue_1f90e6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="支付宝支付"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_wechat_2"
+                android:background="@drawable/shape_wechat_btn"
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:layout_marginTop="@dimen/margin_20"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:clickable="true">
+
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginRight="@dimen/margin_10"
+                    android:src="@mipmap/pop_icon_wechat"/>
+
+                <TextView
+                    android:textSize="@dimen/font_30"
+                    android:textColor="@color/green_00c800"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="微信支付　"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_cancel"
+                android:layout_marginTop="@dimen/margin_20"
+                android:layout_gravity="center"
+                android:textColor="@color/black_999999"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/font_30"
+                android:text="放弃加入天工会"/>
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_wait"
+        android:background="@color/transparency_80"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        android:gravity="center"
+        tools:visibility="visible">
+
+        <LinearLayout
+            android:background="@drawable/drawable_dialog_bg"
+            android:layout_margin="@dimen/margin_40"
+            android:paddingLeft="40dp"
+            android:paddingRight="40dp"
+            android:paddingBottom="20dp"
+            android:paddingTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:textSize="@dimen/font_28"
+                android:textColor="@color/black_333333"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:lineSpacingExtra="@dimen/dp_4"
+                android:paddingBottom="@dimen/padding_5"
+                android:text="请根据您的支付情况点击下面的按钮"/>
+
+
+            <Button
+                android:id="@+id/btn_success"
+                android:layout_marginTop="@dimen/margin_20"
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:background="@drawable/selector_paying_button"
+                android:gravity="center"
+                android:textSize="@dimen/font_30"
+                android:textColor="@color/white_ffffff"
+                android:text="支付成功"
+                />
+
+            <Button
+                android:id="@+id/btn_fail"
+                android:background="@drawable/shape_pay_fail_btn"
+                android:textColor="@color/orange_ff9900"
+                android:textSize="@dimen/font_30"
+                android:layout_marginTop="@dimen/margin_20"
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:gravity="center"
+                android:text="支付失败，重新支付"/>
+
+            <TextView
+                android:id="@+id/tv_close"
+                android:layout_marginTop="@dimen/margin_20"
+                android:layout_gravity="center"
+                android:textColor="@color/black_999999"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/font_30"
+                android:text="关闭"/>
+        </LinearLayout>
+
+    </RelativeLayout>
+</RelativeLayout>

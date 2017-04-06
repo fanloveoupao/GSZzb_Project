@@ -6,10 +6,10 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.chad.library.adapter.base.BaseViewHolder;
-import com.example.utils.CollectionUtil;
 import com.example.lang.StringUtil;
 import com.example.resources.bean.ProjectBean;
 import com.example.resources.bean.UserBean;
+import com.example.utils.CollectionUtil;
 import com.example.utils.HtmlTextUtils;
 import com.gseasypro.app.R;
 import com.gseasypro.app.picasso.ImageLoader;
@@ -17,7 +17,6 @@ import com.gseasypro.app.picasso.ImageLoader;
 import java.util.List;
 
 import app.gseasypro.com.utils.widget.LoadMoreAdapter;
-import retrofit2.http.Url;
 
 /**
  * Created by fan-gk on 2017/2/20.

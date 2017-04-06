@@ -3,7 +3,7 @@ package com.gseasypro.app.life;
 
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
-import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -41,23 +41,20 @@ public class IndexLifeFragment extends PresenterFragment<IndexLifePresenter, Ind
     @BindView(R.id.multiStateView)
     MultiStateView mMultiStateView;
     private IndexLifeAdapter adapter;
-    private View mTopView;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View mView = inflater.inflate(R.layout.fragment_index_life, container, false);
         ButterKnife.bind(this, mView);
-        mTopView = inflater.inflate(R.layout.life_top_view, container, false);
         initViews();
         return mView;
     }
 
     private void initViews() {
         mMultiStateView.setViewState(MultiStateView.VIEW_STATE_LOADING);
-        mRvLifelist.setLayoutManager(new GridLayoutManager(getBaseActivity(), 2));
+        mRvLifelist.setLayoutManager(new LinearLayoutManager(getBaseActivity()));
         adapter = new IndexLifeAdapter(new ArrayList<ItemLifeBean>());
-        adapter.addHeaderView(mTopView);
         mRvLifelist.setAdapter(adapter);
         getPresenter().initLifeItem();
         mRvLifelist.addOnItemTouchListener(new OnItemClickListener() {

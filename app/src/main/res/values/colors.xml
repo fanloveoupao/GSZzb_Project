@@ -67,6 +67,8 @@
     <color name="green_009922">#009922</color>
     <color name="green_339900">#339900</color>
     <color name="green_06B704">#06B704</color>
+    <color name="green_00c800">#00c800</color>
+
     <!--蓝色-->
     <color name="blue_2277dd">#2277dd</color>
     <color name="blue_3377aa">#3377aa</color>
@@ -75,6 +77,7 @@
     <color name="blue_33aacc">#33aacc</color>
     <color name="blue_eaf6ff">#eaf6ff</color>
     <color name="blue_77aacc">#77aacc</color>
+    <color name="blue_1f90e6">#1f90e6</color>
 
     <!--黄色-->
     <color name="yellow_FFF3D3">#FFF3D3</color>

@@ -20,7 +20,6 @@ public class IndexLifeAdapter extends BaseQuickAdapter<ItemLifeBean> {
     @Override
     protected void convert(BaseViewHolder baseViewHolder, ItemLifeBean itemLifeBean) {
         baseViewHolder.setText(R.id.tv_tag, itemLifeBean.itemTag)
-                .setTextColor(R.id.tv_tag, itemLifeBean.tagColors)
                 .setImageResource(R.id.iv_item, itemLifeBean.imageId);
     }
 
