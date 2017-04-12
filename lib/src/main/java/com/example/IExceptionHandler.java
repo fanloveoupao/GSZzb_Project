@@ -7,13 +7,10 @@ import com.example.exceptions.NetworkException;
  */
 
 public interface IExceptionHandler {
-
+    void onNeedLogin(boolean otherDevice);
     void onException(Exception e);
-
     void onException(Exception e, boolean finish);
-
-    void onException(NetworkException e);
-
+    void onException(ActionRequest request, NetworkException e);
     void onWarn(String message);
 }
 

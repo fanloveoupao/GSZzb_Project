@@ -8,6 +8,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.listener.OnItemClickListener;
@@ -82,6 +83,12 @@ public class IndexLifeFragment extends PresenterFragment<IndexLifePresenter, Ind
                 }
             }
         });
+        adapter.removeAllFooterView();
+        View view = LayoutInflater.from(getBaseActivity()).inflate(R.layout.layout_no_more_data,
+                (ViewGroup) mRvLifelist.getParent(), false);
+        TextView mText = (TextView) view.findViewById(R.id.foot_text);
+        mText.setText("----更多内容敬请期待----");
+        adapter.addFooterView(view);
     }
 
     @Override

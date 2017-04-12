@@ -221,6 +221,14 @@ public class DateUtil {
     }
 
 
+    public static Date stringToDate(String time, String format) throws ParseException {
+        String formatTime = timeFormat(time);
+        final SimpleDateFormat simpleDateFormat = new SimpleDateFormat(format);
+        Date date = simpleDateFormat.parse(formatTime);
+        return date;
+
+    }
+
     //获取处理后的时间
     public static String getInterval(Date date) {
         String interval = "";

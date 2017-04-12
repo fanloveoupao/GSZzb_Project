@@ -4,6 +4,7 @@
         <item quantity="one">%d like</item>
         <item quantity="other">%d likes</item>
     </plurals>
+    <string name="network_errror">网络异常，请检查网络设置</string>
     <!--通用-->
     <string name="get_verify_code">获取验证码</string>
     <string name="next">下一步</string>

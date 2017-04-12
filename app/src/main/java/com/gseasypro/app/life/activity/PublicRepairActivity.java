@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.content.ContextCompat;
 import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.presenter.PublicRepairPresenter;
@@ -36,6 +37,8 @@ public class PublicRepairActivity extends PresenterActivity<PublicRepairPresente
     TextView mTvDegree;
     @BindView(R.id.tv_damage)
     TextView mTvDamage;
+    @BindView(R.id.layout_fist_view)
+    LinearLayout mLayoutFistView;
     private SimpleListDialog mCsdegree;
     private SimpleListDialog mDamageDialog;
 
@@ -48,8 +51,9 @@ public class PublicRepairActivity extends PresenterActivity<PublicRepairPresente
     }
 
 
-    @OnClick({R.id.ll_repair_time, R.id.ll_degree, R.id.ll_damage})
+    @OnClick({R.id.ll_repair_time, R.id.ll_degree, R.id.ll_damage, R.id.btn_next})
     public void onClick(View view) {
+        mLayoutFistView.requestFocus();
         switch (view.getId()) {
             case R.id.ll_repair_time:
                 new ChooseTimeDialogFragment.Builder()
@@ -79,6 +83,9 @@ public class PublicRepairActivity extends PresenterActivity<PublicRepairPresente
                     getPresenter().getDamage();
                 else
                     mDamageDialog.show();
+                break;
+            case R.id.btn_next:
+                launch(PublicRepairSuccessActivity.class, true);
                 break;
         }
     }
@@ -110,6 +117,5 @@ public class PublicRepairActivity extends PresenterActivity<PublicRepairPresente
         }
         mDamageDialog.show();
     }
-
 
 }

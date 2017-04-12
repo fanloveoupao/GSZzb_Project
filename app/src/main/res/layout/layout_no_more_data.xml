@@ -11,6 +11,7 @@
         android:layout_height="30dp"
         android:layout_gravity="center"
         android:gravity="center"
+        android:id="@+id/foot_text"
         android:text="----已经没有更多数据----"/>
 
 

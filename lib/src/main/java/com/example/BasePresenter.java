@@ -51,4 +51,8 @@ public abstract class BasePresenter<E extends IView> implements IPresenter<E> {
      */
     public void onViewStop() {
     }
+
+    protected ActionRequest.Builder newActionBuilder(){
+        return new ActionRequest.Builder().setView(getView());
+    }
 }

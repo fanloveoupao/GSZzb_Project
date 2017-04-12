@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<app.gseasypro.com.utils.widget.MRelativelayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rl_header_certification"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/orange_ff5500"
+    android:orientation="vertical">
+
+
+    <RelativeLayout
+        android:id="@+id/btn_back1"
+        android:layout_width="50dp"
+        android:layout_height="48dp">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="20dp"
+            android:src="@drawable/arrow_white_left" />
+
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/iv_logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="11dp"
+        android:src="@mipmap/icon_organization_white_logo_big" />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/iv_logo"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5dp"
+        android:text="掌中宝师兄师姐经验分享"
+        android:textColor="@color/white_ffffff"
+        android:textSize="@dimen/font_36" />
+
+
+    <LinearLayout
+        android:id="@+id/btn_search1"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:layout_alignParentRight="true"
+        android:gravity="center_vertical">
+
+
+        <TextView
+            android:id="@+id/tv_has_look_count1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginRight="15dp"
+            android:drawablePadding="5dp"
+            android:textColor="@color/white_ffffff"
+            android:textSize="@dimen/font_30"
+            tools:text="99" />
+
+    </LinearLayout>
+
+
+</app.gseasypro.com.utils.widget.MRelativelayout>

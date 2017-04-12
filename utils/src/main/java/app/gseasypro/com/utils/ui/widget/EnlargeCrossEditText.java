@@ -5,6 +5,7 @@ import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.text.method.KeyListener;
 import android.util.AttributeSet;
 import android.util.TypedValue;
 import android.view.MotionEvent;
@@ -16,29 +17,26 @@ import android.widget.EditText;
 
 
 public class EnlargeCrossEditText extends EditText {
+    private class EditKeyListenerManager{
+        private final KeyListener listener;
+        public  EditKeyListenerManager(){
+            this.listener = getKeyListener();
+        }
+
+        public void removeKeyListener(){
+            setKeyListener(null);
+        }
+
+        public void resetKeyListener(){
+            setKeyListener(listener);
+        }
+    }
+
+
     private Drawable dRight;
     private Drawable dLeft;
     private Rect rBounds;
-    private TextWatcher watcher = new TextWatcher() {
-
-        @Override
-        public void onTextChanged(CharSequence arg0, int arg1, int arg2,
-                                  int arg3) {
-
-        }
-
-        @Override
-        public void beforeTextChanged(CharSequence arg0, int arg1, int arg2,
-                                      int arg3) {
-
-        }
-
-        @Override
-        public void afterTextChanged(Editable arg0) {
-            handleClearButton();
-
-        }
-    };
+    private EditKeyListenerManager keyListenerManager;
 
     public EnlargeCrossEditText(Context context) {
         super(context);
@@ -56,11 +54,55 @@ public class EnlargeCrossEditText extends EditText {
     }
 
     private void init() {
-
+        this.keyListenerManager = new EditKeyListenerManager();
         this.setCompoundDrawables(this.getCompoundDrawables()[0],
                 this.getCompoundDrawables()[1], null,
                 this.getCompoundDrawables()[3]);
-        this.addTextChangedListener(watcher);
+        this.addTextChangedListener(new TextWatcher() {
+
+            @Override
+            public void onTextChanged(CharSequence arg0, int arg1, int arg2,
+                                      int arg3) {
+
+            }
+
+            @Override
+            public void beforeTextChanged(CharSequence arg0, int arg1, int arg2,
+                                          int arg3) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable arg0) {
+                handleClearButton();
+
+            }
+        });
+
+        onFocusedChanged(hasFocus());
+    }
+
+    private void onFocusedChanged(boolean focused){
+        handleClearButton();
+        if(getEllipsize() != null) {
+            if (focused)
+                keyListenerManager.resetKeyListener();
+            else
+                keyListenerManager.removeKeyListener();
+        }
+    }
+
+    @Override
+    protected void onFocusChanged(boolean focused, int direction, Rect previouslyFocusedRect) {
+        super.onFocusChanged(focused, direction, previouslyFocusedRect);
+        onFocusedChanged(focused);
+    }
+
+    @Override
+    public void setKeyListener(KeyListener input) {
+        super.setKeyListener(input);
+        if(input != null && input != keyListenerManager.listener)
+            keyListenerManager = new EditKeyListenerManager();
     }
 
     @Override
@@ -105,7 +147,7 @@ public class EnlargeCrossEditText extends EditText {
     }
 
     public void handleClearButton() {
-        if (this.getText().toString().trim().length() > 0) {
+        if (this.getText().toString().trim().length() > 0 && this.hasFocus()) {
             this.setCompoundDrawables(null,
                     this.getCompoundDrawables()[1],  this.dRight,
                     this.getCompoundDrawables()[3]);
@@ -123,3 +165,4 @@ public class EnlargeCrossEditText extends EditText {
         }
     }
 }
+

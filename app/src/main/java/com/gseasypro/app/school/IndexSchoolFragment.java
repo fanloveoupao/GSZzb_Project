@@ -23,6 +23,7 @@ import com.example.resources.bean.AdvertisementsBean;
 import com.example.resources.bean.ProjectBean;
 import com.gseasypro.app.R;
 import com.gseasypro.app.adapter.school.ProjectListAdapter;
+import com.gseasypro.app.school.activity.ExperiencePredecessorsActivity;
 import com.gseasypro.app.widget.CommonDataFilterView;
 import com.gseasypro.app.widget.LocalImageHolderView;
 import com.kennyc.view.MultiStateView;
@@ -84,7 +85,7 @@ public class IndexSchoolFragment extends PresenterFragment<IndexSchoolPresenter,
     @BindView(R.id.multiStateView)
     MultiStateView mMultiStateView;
     @BindView(R.id.tv_best_choose)
-    ImageView mTvBestChoose;
+    TextView mTvBestChoose;
     @BindView(R.id.iv_red_point)
     ImageView mIvRedPoint;
     @BindView(R.id.tv_hongniang_count)
@@ -436,5 +437,11 @@ public class IndexSchoolFragment extends PresenterFragment<IndexSchoolPresenter,
         //停止翻页
         if (mBanner != null)
             mBanner.stopTurning();
+    }
+
+    @OnClick(R.id.tv_best_choose)
+    public void onClick() {
+        mTvHongniangCount.setVisibility(GONE);
+        getBaseActivity().launch(ExperiencePredecessorsActivity.class, false);
     }
 }

@@ -7,7 +7,6 @@ import android.support.annotation.Nullable;
 
 import com.example.BasePresenter;
 import com.example.IView;
-import com.example.exceptions.NetworkException;
 
 import app.gseasypro.com.utils.ui.KeyBoardUtils;
 
@@ -90,10 +89,7 @@ public abstract class PresenterActivity<T extends BasePresenter<E>, E extends IV
 
     }
 
-    @Override
-    public void onException(NetworkException e) {
 
-    }
 
     @Override
     public void onWarn(String message) {
