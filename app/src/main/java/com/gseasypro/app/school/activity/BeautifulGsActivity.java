@@ -17,8 +17,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import app.gseasypro.com.utils.PresenterActivity;
-import app.gseasypro.com.utils.widget.FeedContextMenu;
 import app.gseasypro.com.utils.ui.widget.TitleBar;
+import app.gseasypro.com.utils.widget.FeedContextMenu;
 import app.gseasypro.com.utils.widget.FeedContextMenuManager;
 import butterknife.BindView;
 import butterknife.ButterKnife;

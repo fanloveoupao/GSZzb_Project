@@ -24,16 +24,18 @@
         <activity
             android:name=".activity.SplashActivity"
             android:configChanges="keyboardHidden|orientation"
-            android:theme="@style/ActivityStyle" />
-        <activity
-            android:name=".IndexActivity"
-            android:configChanges="keyboardHidden|orientation"
             android:theme="@style/ActivityStyle">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".IndexActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:theme="@style/ActivityStyle">
+
         </activity>
         <activity android:name=".school.activity.SearchNewsActivity" />
         <activity android:name=".school.activity.BeautifulGsActivity" />

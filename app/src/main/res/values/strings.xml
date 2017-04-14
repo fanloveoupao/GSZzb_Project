@@ -31,7 +31,7 @@
         2、您的手机也已注册过？请直接登录或找回密码\n
         3、您有多个帐号？请联系我们合并020-66351168</string>
     <string name="contact_us">联系我们：</string>
-
+    <string name="my_info_no_complete">业务圈是实名交换社区，请完善你的资料</string>
     <!-- 核对个人资料 -->
     <string name="phone_number">手机&#160;&#160;:&#160;&#160;</string>
 

@@ -1,6 +1,7 @@
 package app.gseasypro.com.utils;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -23,6 +24,8 @@ import app.gseasypro.com.utils.ui.KeyBoardUtils;
 import app.gseasypro.com.utils.ui.widget.IIntentInterceptor;
 import app.gseasypro.com.utils.utils.PermissionHelper;
 import app.gseasypro.com.utils.widget.ActionLoadingDialogFragment;
+
+import static android.content.Intent.ACTION_VIEW;
 
 /**
  * Created by fan-gk on 2017/2/9.
@@ -292,5 +295,25 @@ public abstract class BaseActivity extends AppCompatActivity implements IView {
     public void onNeedLogin(boolean otherDevice) {
 
     }
+    @Override
+    public void startActivity(Intent intent, Bundle options) {
+        if (intent != null && ACTION_VIEW.equals(intent.getAction())) {
+            Uri uri = intent.getData();
+            if (uri != null && ("http".equals(uri.getScheme()) || "https".equals(uri.getScheme()))) {
+                if (launchWeb(uri))
+                    return;
+            }
+        }
+        super.startActivity(intent, options);
+    }
 
+    /**
+     * 拦截转跳web的请求
+     *
+     * @param uri
+     * @return 返回true表示已经转跳，其他返回false
+     */
+    protected boolean launchWeb(Uri uri) {
+        return false;
+    }
 }

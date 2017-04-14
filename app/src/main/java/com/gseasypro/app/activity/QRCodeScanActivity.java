@@ -5,14 +5,12 @@ import android.graphics.BitmapFactory;
 import android.graphics.Point;
 import android.hardware.Camera;
 import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageView;
 
-import com.example.BasePresenter;
 import com.example.presenter.QRCodeScanPresenter;
 import com.github.yoojia.qrcode.camera.CameraPreviewView;
 import com.github.yoojia.qrcode.camera.CaptureCallback;
