@@ -202,7 +202,7 @@ public class HttpApiProxyCreater {
 
     private <T> ApiConfig getConfig(Class<T> classOfT) {
 
-        return new ApiConfig(BASE_URL, 15, true, true);
+        return new ApiConfig(BASE_URL, 15, false, false);
     }
 
     private Retrofit createRetrofit(ApiConfig config, String baseUrl) {
@@ -211,7 +211,7 @@ public class HttpApiProxyCreater {
                 .connectTimeout(30, TimeUnit.SECONDS)
                 .readTimeout(15, TimeUnit.SECONDS)
                 .writeTimeout(config.writeTimeoutSeconds, TimeUnit.SECONDS)
-                .addInterceptor(new RequestHeaderInterceptor(config))
+//                .addInterceptor(new RequestHeaderInterceptor(config))
                 .addInterceptor(new HttpLoggingInterceptor().setLevel(ZzbApplication.DEBUG ? HttpLoggingInterceptor.Level.BODY :
                         HttpLoggingInterceptor.Level.NONE));
         if (config.includeCookie)

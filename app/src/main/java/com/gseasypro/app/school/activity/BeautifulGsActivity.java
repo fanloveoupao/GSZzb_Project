@@ -9,14 +9,15 @@ import android.view.View;
 import com.example.presenter.BeautifulGsPresenter;
 import com.example.resources.bean.BeautifulGsItemBean;
 import com.gseasypro.app.R;
+import com.gseasypro.app.activity.BasePresenterActivity;
 import com.gseasypro.app.adapter.school.BeautifulGsAdapter;
 import com.gseasypro.app.adapter.school.FeedItemAnimator;
+import com.gseasypro.app.ioc.compoents.PresenterComponent;
 import com.kennyc.view.MultiStateView;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import app.gseasypro.com.utils.PresenterActivity;
 import app.gseasypro.com.utils.ui.widget.TitleBar;
 import app.gseasypro.com.utils.widget.FeedContextMenu;
 import app.gseasypro.com.utils.widget.FeedContextMenuManager;
@@ -26,7 +27,7 @@ import butterknife.ButterKnife;
 import static com.gseasypro.app.adapter.school.BeautifulGsAdapter.ACTION_LIKE_BUTTON_CLICKED;
 import static com.gseasypro.app.adapter.school.BeautifulGsAdapter.ACTION_LIKE_IMAGE_CLICKED;
 
-public class BeautifulGsActivity extends PresenterActivity<BeautifulGsPresenter, BeautifulGsPresenter.BeautifulGsView>
+public class BeautifulGsActivity extends BasePresenterActivity<BeautifulGsPresenter, BeautifulGsPresenter.BeautifulGsView>
         implements BeautifulGsPresenter.BeautifulGsView {
     @BindView(R.id.title_bar)
     TitleBar mTitleBar;
@@ -108,5 +109,10 @@ public class BeautifulGsActivity extends PresenterActivity<BeautifulGsPresenter,
     @Override
     public void requestSuccess(List<BeautifulGsItemBean> datas) {
         gsAdapter.setNewData(datas);
+    }
+
+    @Override
+    protected void injectPresenter(PresenterComponent component, BeautifulGsPresenter preseneter) {
+        component.inject(preseneter);
     }
 }

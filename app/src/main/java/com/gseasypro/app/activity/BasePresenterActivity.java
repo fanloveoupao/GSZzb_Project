@@ -9,6 +9,7 @@ import com.example.exceptions.NetworkException;
 import com.gseasypro.app.R;
 import com.gseasypro.app.ZzbApplication;
 import com.gseasypro.app.fragment.dialog.ActionReloadDialogFragment;
+import com.gseasypro.app.ioc.compoents.DaggerPresenterComponent;
 import com.gseasypro.app.ioc.compoents.PresenterComponent;
 
 import app.gseasypro.com.utils.DialogUtil;
@@ -25,7 +26,6 @@ public abstract class BasePresenterActivity<T extends BasePresenter<E>, E extend
     protected T createPresenter() {
         T presenter = super.createPresenter();
         PresenterComponent component = DaggerPresenterComponent.builder()
-                .daoMasterModule(((ZzbApplication) getApplication()).daoMasterModule)
                 .build();
         injectPresenter(component, getPresenter());
         return presenter;

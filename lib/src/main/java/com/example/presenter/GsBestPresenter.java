@@ -1,5 +1,6 @@
 package com.example.presenter;
 
+import com.example.ActionRunnable;
 import com.example.BasePresenter;
 import com.example.IView;
 import com.example.resources.bean.ItemGsBestBean;
@@ -34,12 +35,20 @@ public class GsBestPresenter extends BasePresenter<GsBestPresenter.GsBestIView> 
     private int limit = 20;
 
     public void initGsBestData() {
-        List<ItemGsBestBean> list = new ArrayList<>();
-        for (int i = 0; i < 20; i++) {
-            ItemGsBestBean itemGsBestBean = new ItemGsBestBean();
-            list.add(itemGsBestBean);
-        }
-        getView().onInitGsBestSuccess(list);
+
+        newActionBuilder()
+                .setRunnable(new ActionRunnable() {
+                    @Override
+                    public void run() throws Exception {
+                        List<ItemGsBestBean> list = new ArrayList<>();
+                        for (int i = 0; i < 20; i++) {
+                            ItemGsBestBean itemGsBestBean = new ItemGsBestBean();
+                            list.add(itemGsBestBean);
+                        }
+                        getView().onInitGsBestSuccess(list);
+                    }
+                })
+                .setRunLoading().setAllowUserReload().setBackOnExceptionFinishParent().run();
     }
 
     public int getLimit() {

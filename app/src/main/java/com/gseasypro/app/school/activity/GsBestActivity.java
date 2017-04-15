@@ -11,19 +11,20 @@ import com.chad.library.adapter.base.listener.OnItemClickListener;
 import com.example.presenter.GsBestPresenter;
 import com.example.resources.bean.ItemGsBestBean;
 import com.gseasypro.app.R;
+import com.gseasypro.app.activity.BasePresenterActivity;
 import com.gseasypro.app.adapter.school.GsBestAdapter;
+import com.gseasypro.app.ioc.compoents.PresenterComponent;
 import com.gseasypro.app.school.fragment.GsBestDetailFragment;
 import com.kennyc.view.MultiStateView;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import app.gseasypro.com.utils.PresenterActivity;
 import app.gseasypro.com.utils.ui.widget.TitleBar;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class GsBestActivity extends PresenterActivity<GsBestPresenter, GsBestPresenter.GsBestIView>
+public class GsBestActivity extends BasePresenterActivity<GsBestPresenter, GsBestPresenter.GsBestIView>
         implements GsBestPresenter.GsBestIView, BaseQuickAdapter.RequestLoadMoreListener {
 
     private final static String FRAGMENT_TAG_GSBEST = "fragment_tag_detail";
@@ -100,5 +101,10 @@ public class GsBestActivity extends PresenterActivity<GsBestPresenter, GsBestPre
     @Override
     public void onLoadMoreRequested() {
 
+    }
+
+    @Override
+    protected void injectPresenter(PresenterComponent component, GsBestPresenter preseneter) {
+        component.inject(preseneter);
     }
 }

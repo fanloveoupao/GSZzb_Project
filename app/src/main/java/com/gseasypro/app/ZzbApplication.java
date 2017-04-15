@@ -2,6 +2,7 @@ package com.gseasypro.app;
 
 import android.app.Application;
 
+import com.gseasypro.app.ioc.modules.DaoMasterModule;
 import com.gseasypro.app.picasso.ImageLoader;
 
 import app.gseasypro.com.utils.ui.ActivitiesHelper;
@@ -21,10 +22,7 @@ public class ZzbApplication extends Application {
         ImageLoader.init(this);
 
         ImageSelecter.init(this);
-        DaggerReceiverComponent.builder()
-                .daoMasterModule(daoMasterModule)
-                .build()
-                .inject(MessageReceiver.getInstance());
+
     }
 
     protected <T> boolean existsActivity(Class<T> classOfActivity) {
@@ -39,4 +37,6 @@ public class ZzbApplication extends Application {
         ActivitiesHelper.finishAll();
         android.os.Process.killProcess(android.os.Process.myPid());
     }
+
+
 }
