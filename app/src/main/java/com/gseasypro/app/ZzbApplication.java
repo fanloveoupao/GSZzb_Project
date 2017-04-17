@@ -2,7 +2,6 @@ package com.gseasypro.app;
 
 import android.app.Application;
 
-import com.gseasypro.app.ioc.modules.DaoMasterModule;
 import com.gseasypro.app.picasso.ImageLoader;
 
 import app.gseasypro.com.utils.ui.ActivitiesHelper;
@@ -14,7 +13,6 @@ import app.gseasypro.com.utils.widget.ImageSelecter;
 
 public class ZzbApplication extends Application {
     public static final boolean DEBUG = true;
-    public final DaoMasterModule daoMasterModule = new DaoMasterModule(this);
 
     @Override
     public void onCreate() {

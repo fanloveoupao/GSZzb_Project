@@ -11,6 +11,7 @@ import com.gseasypro.app.ZzbApplication;
 import com.gseasypro.app.fragment.dialog.ActionReloadDialogFragment;
 import com.gseasypro.app.ioc.compoents.DaggerPresenterComponent;
 import com.gseasypro.app.ioc.compoents.PresenterComponent;
+import com.gseasypro.app.ioc.modules.ServiceModule;
 
 import app.gseasypro.com.utils.DialogUtil;
 import app.gseasypro.com.utils.PresenterActivity;
@@ -26,6 +27,7 @@ public abstract class BasePresenterActivity<T extends BasePresenter<E>, E extend
     protected T createPresenter() {
         T presenter = super.createPresenter();
         PresenterComponent component = DaggerPresenterComponent.builder()
+                .serviceModule(new ServiceModule())
                 .build();
         injectPresenter(component, getPresenter());
         return presenter;

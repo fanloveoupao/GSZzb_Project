@@ -7,15 +7,19 @@ import com.example.exceptions.TgnetException;
 import com.example.exceptions.UnloginException;
 import com.example.resources.bean.IndexBean;
 
+import javax.inject.Inject;
+
 /**
  * Created by fan-gk on 2017/4/14.
  */
 
 public class ISchoolService {
-    private ISchoolApi schoolApi;
 
-    public ISchoolService(ISchoolApi schoolApi) {
-        this.schoolApi = schoolApi;
+    @Inject
+    ISchoolApi schoolApi;
+
+    public ISchoolService() {
+
     }
 
     public IndexBean getComplainDetail() throws UnloginException, NetworkException, TgnetException, GsnetException {
