@@ -3,6 +3,7 @@ package com.example;
 import com.example.exceptions.ErrorCode;
 import com.example.exceptions.GsnetException;
 import com.example.exceptions.NetworkException;
+import com.example.exceptions.TgnetException;
 import com.example.exceptions.UnloginException;
 
 import retrofit2.Call;
@@ -15,7 +16,7 @@ import retrofit2.Response;
 public class CallAdapter<T extends EmptyBean> {
     private NetworkException ne;
     private UnloginException ue;
-    private GsnetException te;
+    private TgnetException te;
 
     protected T body = null;
 
@@ -25,7 +26,7 @@ public class CallAdapter<T extends EmptyBean> {
         this.call = call;
     }
 
-    public void ok() throws NetworkException, GsnetException, UnloginException {
+    public void ok() throws NetworkException, TgnetException, UnloginException {
         Response<T> response = null;
         if(!call.isExecuted()) {
             try {
@@ -38,17 +39,17 @@ public class CallAdapter<T extends EmptyBean> {
                     ne = new NetworkException("服务器错误，请稍后再试");
             } else {
                 if(!response.isSuccessful())
-                    te = new GsnetException(ErrorCode.SERVER, "服务不可用，请稍后再试.错误码：" + response.code());
+                    te = new TgnetException(ErrorCode.SERVER, "服务不可用，请稍后再试.错误码：" + response.code());
                 else {
                     T body = response.body();
                     if (body == null)
-                        te = new GsnetException(ErrorCode.SERVER, "服务不可用，请稍后再试");
+                        te = new TgnetException(ErrorCode.SERVER, "服务不可用，请稍后再试");
                     else if (!body.ok()) {
                         ErrorCode errorCode = ErrorCode.parse(body.state_code);
                         if(errorCode == ErrorCode.UNLOGIN)
                             ue = new UnloginException(UnloginException.TYPE_OTHER_DEVICE);
                         else
-                            te = new GsnetException(errorCode, body.message);
+                            te = new TgnetException(errorCode, body.message);
                     }
                     else
                         this.body = body;

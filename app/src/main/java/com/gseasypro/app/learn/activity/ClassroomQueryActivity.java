@@ -12,6 +12,7 @@ import com.gseasypro.app.adapter.learn.ClassroomQueryAdapter;
 import com.gseasypro.app.adapter.learn.bean.Level0Item;
 import com.gseasypro.app.adapter.learn.bean.Level1Item;
 import com.gseasypro.app.adapter.learn.bean.Person;
+import com.gseasypro.app.mine.fragment.SeatTableViewFragment;
 import com.kennyc.view.MultiStateView;
 
 import java.util.ArrayList;
@@ -44,6 +45,16 @@ public class ClassroomQueryActivity extends PresenterActivity<ClassroomQueryPres
         adapter = new ClassroomQueryAdapter(new ArrayList<MultiItemEntity>());
         mRvClassroomList.setAdapter(adapter);
         getPresenter().initData();
+        initListener();
+    }
+
+    private void initListener() {
+        adapter.setOnItemClickListener(new ClassroomQueryAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick() {
+                SeatTableViewFragment.createInstance().show(getSupportFragmentManager(), "seattableview");
+            }
+        });
     }
 
     @Override
@@ -59,7 +70,7 @@ public class ClassroomQueryActivity extends PresenterActivity<ClassroomQueryPres
         for (int i = 0; i < lv0Count; i++) {
             Level0Item lv0 = new Level0Item("第 " + (i + 1) + "教学楼", "subtitle of " + i);
             for (int j = 0; j < lv1Count; j++) {
-                Level1Item lv1 = new Level1Item("第" + (j + 1)+"层", "层");
+                Level1Item lv1 = new Level1Item("第" + (j + 1) + "层", "层");
                 for (int k = 0; k < personCount; k++) {
                     lv1.addSubItem(new Person(nameList[k], random.nextInt(10)));
                 }

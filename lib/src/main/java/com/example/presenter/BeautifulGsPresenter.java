@@ -20,7 +20,6 @@ public class BeautifulGsPresenter extends BasePresenter<BeautifulGsPresenter.Bea
     }
 
 
-
     public interface BeautifulGsView extends IView {
         void requestSuccess(List<BeautifulGsItemBean> datas);
     }
@@ -33,16 +32,7 @@ public class BeautifulGsPresenter extends BasePresenter<BeautifulGsPresenter.Bea
             itemBean.likesCount = 1 + i * 3;
             itemBeanList.add(itemBean);
         }
-        newActionBuilder()
-                .setRunnable(new ActionRunnable() {
-                    @Override
-                    public void run() throws Exception {
-
-                    }
-                })
-                .setRunLoading()
-                .setAllowUserReload()
-                .run();
+        getView().requestSuccess(itemBeanList);
 
     }
 }

@@ -1,7 +1,9 @@
 package com.gseasypro.app.ioc.modules;
 
-import com.example.schoolapi.ISchoolApi;
-import com.example.schoolapi.ISchoolService;
+import com.example.api.ILoginApi;
+import com.example.api.ILoginService;
+import com.example.api.schoolapi.ISchoolApi;
+import com.example.api.schoolapi.ISchoolService;
 import com.gseasypro.app.http.HttpApiProxyCreater;
 
 import dagger.Module;
@@ -14,18 +16,22 @@ import dagger.Provides;
 @Module
 public class ServiceModule {
     private HttpApiProxyCreater creater;
+    private ISchoolApi schoolApi;
+    private ILoginApi iLoginApi;
 
     public ServiceModule() {
         this.creater = new HttpApiProxyCreater();
-    }
-
-    @Provides
-    public ISchoolApi provideISchoolApi() {
-        return creater.create(ISchoolApi.class);
+        schoolApi = creater.create(ISchoolApi.class);
+        iLoginApi = creater.create(ILoginApi.class);
     }
 
     @Provides
     public ISchoolService provideISchoolService() {
-        return new ISchoolService();
+        return new ISchoolService(schoolApi);
+    }
+
+    @Provides
+    public ILoginService providesILoginService() {
+        return new ILoginService(iLoginApi);
     }
 }

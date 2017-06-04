@@ -5,7 +5,7 @@ import com.example.BasePresenter;
 import com.example.IView;
 import com.example.resources.bean.IndexBean;
 import com.example.resources.bean.ItemGsBestBean;
-import com.example.schoolapi.ISchoolService;
+import com.example.api.schoolapi.ISchoolService;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -43,23 +43,12 @@ public class GsBestPresenter extends BasePresenter<GsBestPresenter.GsBestIView> 
 
     public void initGsBestData() {
 
-        newActionBuilder()
-                .setRunnable(new ActionRunnable() {
-                    @Override
-                    public void run() throws Exception {
-                        List<ItemGsBestBean> list = new ArrayList<>();
-                        for (int i = 0; i < 20; i++) {
-                            ItemGsBestBean itemGsBestBean = new ItemGsBestBean();
-                            list.add(itemGsBestBean);
-                        }
-                        IndexBean indexBean = service.getComplainDetail();
-                        if (indexBean != null) {
-                            System.out.print(indexBean.name);
-                        }
-                        getView().onInitGsBestSuccess(list);
-                    }
-                })
-                .setRunLoading().setAllowUserReload().setBackOnExceptionFinishParent().run();
+        List<ItemGsBestBean> list = new ArrayList<>();
+        for (int i = 0; i < 20; i++) {
+            ItemGsBestBean itemGsBestBean = new ItemGsBestBean();
+            list.add(itemGsBestBean);
+        }
+        getView().onInitGsBestSuccess(list);
     }
 
     public int getLimit() {

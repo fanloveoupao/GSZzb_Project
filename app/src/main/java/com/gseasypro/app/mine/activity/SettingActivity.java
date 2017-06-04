@@ -8,11 +8,14 @@ import android.widget.TextView;
 
 import com.example.presenter.SettingPresenter;
 import com.gseasypro.app.R;
+import com.gseasypro.app.login.LoginActivity;
 
+import app.gseasypro.com.utils.DialogUtil;
 import app.gseasypro.com.utils.PresenterActivity;
 import app.gseasypro.com.utils.ui.widget.TitleBar;
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 public class SettingActivity extends PresenterActivity<SettingPresenter, SettingPresenter.SettingView>
         implements SettingPresenter.SettingView {
@@ -48,5 +51,17 @@ public class SettingActivity extends PresenterActivity<SettingPresenter, Setting
     @Override
     public void onExit() {
 
+    }
+
+    @OnClick(R.id.bt_setting_exit)
+    public void onViewClicked() {
+        DialogUtil.softTwoBtnDialog(this, "确定退出吗?", new Runnable() {
+            @Override
+            public void run() {
+                launch(LoginActivity.class, true);
+                getActivitiesManger().finishAllButThis(LoginActivity.class);
+
+            }
+        });
     }
 }

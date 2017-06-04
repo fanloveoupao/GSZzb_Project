@@ -11,12 +11,13 @@ import java.util.List;
 
 import app.gseasypro.com.utils.BaseActivity;
 
+
 /**
- * Created by fan-gk on 2017/4/14.
+ * Created by fan-gk on 2017/4/12.
  */
 
 
-public final class ActivitiesHelper {
+public class ActivitiesHelper {
     private static BaseActivity lastResumeActivity;
     private static final LinkedList<Activity> activities = new LinkedList<>();
 
@@ -92,7 +93,7 @@ public final class ActivitiesHelper {
             Activity activity;
             do {
                 activity = activities.poll();
-                if (activity != null && !StringUtil.equals(activity.getClass().getName(), activityClass.getName()))
+                if (activity != null && activity.getClass().getName() != activityClass.getName())
                     finish(activity);
             } while (activity != null);
         }
@@ -108,7 +109,7 @@ public final class ActivitiesHelper {
         List<Activity> finishes = new ArrayList<>();
         synchronized (activities) {
             for (Activity activity : activities) {
-                if (activity != null && StringUtil.equals(activity.getClass().getName(), activityClass.getName())) {
+                if (activity != null && activity.getClass().getName() == activityClass.getName()) {
                     finishes.add(activity);
                 }
             }
@@ -118,4 +119,3 @@ public final class ActivitiesHelper {
         }
     }
 }
-

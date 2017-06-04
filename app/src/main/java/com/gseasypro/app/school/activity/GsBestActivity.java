@@ -48,7 +48,6 @@ public class GsBestActivity extends BasePresenterActivity<GsBestPresenter, GsBes
 
 
     private void initViews() {
-        mMultiStateView.setViewState(MultiStateView.VIEW_STATE_LOADING);
         adapter = new GsBestAdapter(new ArrayList<ItemGsBestBean>());
         adapter.openLoadAnimation(BaseQuickAdapter.SLIDEIN_BOTTOM);
         adapter.openLoadMore(getPresenter().getLimit());
@@ -73,8 +72,6 @@ public class GsBestActivity extends BasePresenterActivity<GsBestPresenter, GsBes
 
     @Override
     public void onInitGsBestSuccess(List<ItemGsBestBean> data) {
-        mMultiStateView.setViewState(MultiStateView.VIEW_STATE_CONTENT);
-
         adapter.setNewData(data);
     }
 

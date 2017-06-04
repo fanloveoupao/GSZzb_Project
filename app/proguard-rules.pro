@@ -23,3 +23,5 @@
 -keepclasseswithmembers class freemarker.** {
    *;
 }
+-dontwarn okio.**
+-dontwarn javax.annotation.**

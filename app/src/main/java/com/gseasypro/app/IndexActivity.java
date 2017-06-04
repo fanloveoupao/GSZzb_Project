@@ -11,6 +11,7 @@ import android.widget.CompoundButton;
 import android.widget.RadioButton;
 import android.widget.TextView;
 
+import com.gseasypro.app.activity.PhpDataTestActivity;
 import com.gseasypro.app.activity.QRCodeScanActivity;
 import com.gseasypro.app.learn.IndexLearnFragment;
 import com.gseasypro.app.life.IndexLifeFragment;
@@ -114,7 +115,8 @@ public class IndexActivity extends PresenterActivity<IndexPresenter, IndexPresen
 
     @OnClick(R.id.tv_right_search)
     void launchSearchProject() {
-        launch(SearchNewsActivity.class, false);
+//        launch(SearchNewsActivity.class, false);
+        launch(PhpDataTestActivity.class, false);
     }
 
 

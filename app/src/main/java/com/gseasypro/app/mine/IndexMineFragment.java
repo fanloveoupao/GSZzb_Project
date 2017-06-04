@@ -10,6 +10,8 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.example.presenter.IndexMinePresenter;
+import com.example.resources.bean.BaseUserBean;
+import com.example.ui.UserSettings;
 import com.gseasypro.app.R;
 import com.gseasypro.app.mine.activity.EditPersonActivity;
 import com.gseasypro.app.mine.activity.MyCollectionActivity;
@@ -57,6 +59,9 @@ public class IndexMineFragment extends PresenterFragment<IndexMinePresenter, Ind
         ButterKnife.bind(this, view);
         ImageLoader.loadIcon("https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=3344085265,3893608825&fm=23&gp=0.jpg", mImgvIcon, true, true);
         mTvnameAndpost.setText("广技师(传播学院)");
+        BaseUserBean userBean = UserSettings.getInstance().getBaseUserBean();
+        if (userBean != null)
+            mTvnameAndpost.setText(userBean.username + "(" + userBean.major + ")");
         return view;
     }
 

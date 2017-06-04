@@ -1,6 +1,4 @@
 apply plugin: 'com.android.application'
-apply plugin: 'android-apt'
-apply plugin: 'com.neenbedankt.android-apt'
 android {
     compileSdkVersion COMPILE_SDK_VERSION as int
     buildToolsVersion BUILD_TOOLS_VERSION
@@ -31,16 +29,17 @@ dependencies {
     compile 'com.android.support:appcompat-v7:' + SUPPORT_VERSION
     compile project(':utils')
     compile project(path: ':lib')
-
-
-    compile 'com.jakewharton:butterknife:8.4.0'
-    compile 'com.android.support:support-v4:24.2.1'
+    //
+    compile 'com.jakewharton:butterknife:8.6.0'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.6.0'
+    compile 'com.google.dagger:dagger:2.11-rc1'
+    annotationProcessor 'com.google.dagger:dagger-compiler:2.11-rc1'
+    //
     compile 'com.squareup.okhttp3:okhttp:3.4.1'
     compile 'com.squareup.okhttp3:okhttp-urlconnection:3.4.1'
     compile 'com.squareup.okhttp3:logging-interceptor:3.4.1'
-    compile 'com.google.dagger:dagger:2.7'
-    apt 'com.google.dagger:dagger-compiler:2.7'
     testCompile 'junit:junit:4.12'
-    apt 'com.jakewharton:butterknife-compiler:8.4.0'
 
+
+    compile 'com.android.support.constraint:constraint-layout:1.0.0-beta4'
 }

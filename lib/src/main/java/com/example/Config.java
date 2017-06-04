@@ -10,7 +10,7 @@ public class Config {
 
     public final static String WEB_HOST = "ywq.tgnet.com";
 
-    public final static String HOST = "192.168.0.42";
+    public final static String HOST = "192.168.191.4";
 
     public final static String SEARCH_HOST = SCHEMA + "api.search.tgnet.com";
 

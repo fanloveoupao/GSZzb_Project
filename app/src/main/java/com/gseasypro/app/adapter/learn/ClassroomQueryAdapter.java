@@ -2,6 +2,7 @@ package com.gseasypro.app.adapter.learn;
 
 import android.util.Log;
 import android.view.View;
+import android.widget.TextView;
 
 import com.chad.library.adapter.base.BaseMultiItemQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
@@ -10,6 +11,7 @@ import com.gseasypro.app.R;
 import com.gseasypro.app.adapter.learn.bean.Level0Item;
 import com.gseasypro.app.adapter.learn.bean.Level1Item;
 import com.gseasypro.app.adapter.learn.bean.Person;
+import com.gseasypro.app.mine.fragment.SeatTableViewFragment;
 
 import java.util.List;
 
@@ -35,6 +37,16 @@ public class ClassroomQueryAdapter extends BaseMultiItemQuickAdapter<MultiItemEn
         addItemType(TYPE_LEVEL_0, R.layout.item_expandable_lv0);
         addItemType(TYPE_LEVEL_1, R.layout.item_expandable_lv1);
         addItemType(TYPE_PERSON, R.layout.item_expandable_lv2);
+    }
+
+    public interface OnItemClickListener {
+        void onItemClick();
+    }
+
+    private OnItemClickListener onItemClickListener;
+
+    public void setOnItemClickListener(OnItemClickListener onItemClickListener) {
+        this.onItemClickListener = onItemClickListener;
     }
 
     @Override
@@ -94,6 +106,13 @@ public class ClassroomQueryAdapter extends BaseMultiItemQuickAdapter<MultiItemEn
             case TYPE_PERSON:
                 final Person person = (Person) item;
                 holder.setText(R.id.tv, person.name + +getParentPosition(person));
+                TextView textView = holder.getView(R.id.tv);
+                textView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        onItemClickListener.onItemClick();
+                    }
+                });
                 break;
         }
     }

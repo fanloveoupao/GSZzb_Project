@@ -156,7 +156,6 @@ public class HttpApiProxyCreater {
             public Type responseType() {
                 return responseType;
             }
-
             @Override
             public <R> AsyncCall<R> adapt(Call<R> call) {
                 return new AsyncCall<>(call);
@@ -190,7 +189,8 @@ public class HttpApiProxyCreater {
         Object client = clientHashMap.get(identity);
         if (client == null) {
             ApiConfig config = getConfig(classOfT);
-            String baseUrl = DnsService.getInstance().getBaseUrl(config.host);
+            //http://118.89.28.170
+            String baseUrl = "http://118.89.28.170";
             Retrofit retrofit = retrofitHashMap.get(config.baseUrl);
             if (retrofit == null) {
                 retrofitHashMap.put(config.baseUrl, retrofit = createRetrofit(config, baseUrl));

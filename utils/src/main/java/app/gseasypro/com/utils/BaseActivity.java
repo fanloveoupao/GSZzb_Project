@@ -20,6 +20,8 @@ import java.util.ArrayDeque;
 import java.util.Queue;
 
 import app.gseasypro.com.utils.executor.ThreadExecutor;
+import app.gseasypro.com.utils.ui.ActivitiesHelper;
+import app.gseasypro.com.utils.ui.ActivitiesManger;
 import app.gseasypro.com.utils.ui.KeyBoardUtils;
 import app.gseasypro.com.utils.ui.widget.IIntentInterceptor;
 import app.gseasypro.com.utils.utils.PermissionHelper;
@@ -41,10 +43,16 @@ public abstract class BaseActivity extends AppCompatActivity implements IView {
 
     private final Queue<Runnable> saveInstanceStateRunnables = new ArrayDeque<>();
     private boolean isSavedInstanceState;
+    private ActivitiesManger activitiesManger = new ActivitiesManger(this);
+
+    protected ActivitiesManger getActivitiesManger() {
+        return activitiesManger;
+    }
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        ActivitiesHelper.addActivity(this);
     }
 
     public void launch(final Intent intent, final IIntentInterceptor intentInterceptor, final boolean finish) {
@@ -128,6 +136,12 @@ public abstract class BaseActivity extends AppCompatActivity implements IView {
                             try {
                                 runnable.run();
                                 request.setResultSuccessful();
+                            } catch (TgnetException e) {
+//                                ToastUtils.show(getBaseContext(), e.getMessage(), Toast.LENGTH_SHORT);
+                                onException(request, e);
+                            } catch (NetworkException e) {
+//                                ToastUtils.show(getBaseContext(), e.getMessage(), Toast.LENGTH_SHORT);
+                                onException(request, e);
                             } catch (Exception e) {
                                 if (request.getRunType() != ActionRequest.RUN_TYPE_BACKGROUND)
                                     onException(request, e);
@@ -292,9 +306,11 @@ public abstract class BaseActivity extends AppCompatActivity implements IView {
             }
         }
     }
+
     public void onNeedLogin(boolean otherDevice) {
 
     }
+
     @Override
     public void startActivity(Intent intent, Bundle options) {
         if (intent != null && ACTION_VIEW.equals(intent.getAction())) {
@@ -316,4 +332,6 @@ public abstract class BaseActivity extends AppCompatActivity implements IView {
     protected boolean launchWeb(Uri uri) {
         return false;
     }
+
+
 }
